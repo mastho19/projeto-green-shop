@@ -1,24 +1,55 @@
 import { Button, Grid, TextField, Typography } from "@material-ui/core";
 import { Box } from "@mui/material";
-import React, { ChangeEvent, useState } from "react";
-import { Link } from 'react-router-dom';
+import React, { ChangeEvent, useState, useEffect } from "react";
+import useLocalStorage from 'react-use-localstorage'
+import { Link, useNavigate } from 'react-router-dom';
+import UserLogin from "../../model/userLogin";
+import {login} from '../../service/Service'
 import "./login.css";
+
 function Login() {
 
-  let UsuarioOK = false
   
+  let navigate = useNavigate();
+  const [token, setToken] = useLocalStorage('token');
+  const [userLogin, setUserLogin] = useState<UserLogin>(
+      {
+        id_usuario: 0,
+        nome: '',
+        usuario: '',
+        foto: '',
+        senha: '',
+        token:'',
+      }
+      )
+
+      function updatedModel(e: ChangeEvent<HTMLInputElement>) {
+
+          setUserLogin({
+              ...userLogin,
+              [e.target.name]: e.target.value
+          })
+      }
+
+          useEffect(()=>{
+              if(token != ''){
+                  navigate('/home')
+              }
+          }, [token])
+
+      async function onSubmit(e: ChangeEvent<HTMLFormElement>){
+          e.preventDefault();
+          try{
+              await login(`/auth/logar`, userLogin, setToken)
+
+              alert('Usuário logado com sucesso!');
+          }catch(error){
+              alert('Dados do usuário inconsistentes. Erro ao logar!');
+          }
+      }
+
   
 
-  const [usuario, setUsuario] = useState<String>('')
-  const [erroUsuario, setErroUsuario] = useState<String>('')
-
-  function onSubmit(e: ChangeEvent<HTMLFormElement>) {
-    e.preventDefault()
-    if(usuario.length < 3){
-      setErroUsuario('erro')
-    }
-    console.log(usuario)
-  }
 
   return (
     <>
@@ -32,14 +63,14 @@ function Login() {
               label="Usuário"
               fullWidth
               margin="normal"
-              id="Usuario"
-              value={usuario}
-              onChange={(e: ChangeEvent<HTMLInputElement>) => {
-                setUsuario(e.target.value)
-              }}>
+              id="usuario"
+              name='usuario'
+              value={userLogin.usuario}
+              onChange={(e:ChangeEvent<HTMLInputElement>) => updatedModel(e)}
+             >
 
             </TextField>
-            <div className=" text-red" id="erroUsuario">{erroUsuario}</div>
+          
             <TextField
 
               variant="outlined"
@@ -47,10 +78,12 @@ function Login() {
               fullWidth
               margin="normal"
               id="Senha"
+              name='senha'
+              type='password'
+              onChange={(e:ChangeEvent<HTMLInputElement>) => updatedModel(e)}
 
             >
             </TextField>
-            <Box className=" text-red" id="erroPassword"></Box>
 
             <Box textAlign="center">
               <Button variant="outlined" type="submit">Enviar</Button>
