@@ -1,12 +1,12 @@
 import React from 'react';
-import logo from './logo.svg';
-import Login from './components/login/login';
+import Login from './paginas/login/login';
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
-import SobreNos from './components/sobreNos/sobreNos';
+import SobreNos from './paginas/sobreNos/sobreNos';
 import './App.css';
 import Navbar from './components/estaticos/navbar/Navbar';
 import Home from './paginas/home/Home';
 import Footer from './components/estaticos/footer/footer';
+import Cadastro from './paginas/cadastro/cadastro';
 
 
 function App() {
@@ -18,6 +18,7 @@ function App() {
           <Route path='/home' element={<Home/>} />
           <Route path='/login' element={<Login/>}/>
           <Route path='/sobre-nos' element={<SobreNos/>}/>
+          <Route path='/cadastro' element={<Cadastro/>}/>
         </Routes>
         <Footer/>
       </Router>
