@@ -34,6 +34,14 @@ function Login() {
     }
     console.log(senha)
 
+    try{
+      await login(`/auth/logar`, userLogin, setToken)
+  
+        alert('Usuário logado com sucesso!');
+    }catch(error){
+        alert('Dados do usuário inconsistentes. Erro ao logar!');
+    }
+
 
   }
 
@@ -45,12 +53,10 @@ function Login() {
   const [token, setToken] = useLocalStorage('token');
   const [userLogin, setUserLogin] = useState<UserLogin>(
     {
-      id_usuario: 0,
-      nome: '',
+      
       usuario: '',
-      foto: '',
       senha: '',
-      token: '',
+      
     }
   )
 
@@ -69,13 +75,7 @@ function Login() {
   }, [token])
 
 
-  // try{
-  //     await login(`/auth/logar`, userLogin, setToken)
-
-  //     alert('Usuário logado com sucesso!');
-  // }catch(error){
-  //     alert('Dados do usuário inconsistentes. Erro ao logar!');
-  // }
+    
 
 
 
