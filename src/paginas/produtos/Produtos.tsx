@@ -18,12 +18,7 @@ function ListarProdutos(){
   )
   let navigate = useNavigate();
 
-  useEffect(() => {
-    if (token == "") {
-      alert("VocÃª precisa estar logado!");
-      navigate("/login");
-    }
-  }, [token]);
+
 
   async function getProduto() {
     await busca("/produtos/all", setProdutos, {

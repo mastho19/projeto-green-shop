@@ -8,11 +8,16 @@ import Home from './paginas/home/Home';
 import Footer from './components/estaticos/footer/footer';
 import Cadastro from './paginas/cadastro/cadastro';
 import Produtos from './paginas/produtos/Produtos'
+import { Provider } from 'react-redux';
+import store from './store/store';
 
 
 function App() {
   return (
     <>
+    <Provider store={store}>
+
+    
       <Router>
         <Navbar/>
         <Routes>
@@ -24,6 +29,7 @@ function App() {
         </Routes>
         <Footer/>
       </Router>
+      </Provider>
     </>
   )
 }
