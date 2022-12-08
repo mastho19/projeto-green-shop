@@ -1,6 +1,6 @@
 import { AppBar, Toolbar, Typography } from "@material-ui/core";
 import { Box } from "@mui/material";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Button from "@mui/material/Button";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
@@ -11,9 +11,14 @@ import Input from "@mui/material/Input";
 import InputAdornment from "@mui/material/InputAdornment";
 import FormControl from "@mui/material/FormControl";
 import SearchIcon from '@mui/icons-material/Search';
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import FadeMenu from "../../menuDrop/menuDrop";
+
 
 function Navbar() {
+
+
+
   return (
     <>
       <AppBar position="static" className="appbar">
@@ -86,7 +91,7 @@ function Navbar() {
                     produtos
                 </Typography>
           </Link>
-        <a href="#">categorias</a>
+        <FadeMenu/>
         <a href="#">promoções</a>
         <a href="#">móveis</a>
         <a href="#">decoração</a>
