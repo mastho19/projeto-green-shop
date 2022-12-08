@@ -11,6 +11,7 @@ import Input from "@mui/material/Input";
 import InputAdornment from "@mui/material/InputAdornment";
 import FormControl from "@mui/material/FormControl";
 import SearchIcon from '@mui/icons-material/Search';
+import { Link } from "react-router-dom";
 
 function Navbar() {
   return (
@@ -80,7 +81,11 @@ function Navbar() {
           </Box>
         </Toolbar>
         <Toolbar className="bar2">
-        <a href="#">produtos</a>
+          <Link to='/produtos'>
+                <Typography>
+                    produtos
+                </Typography>
+          </Link>
         <a href="#">categorias</a>
         <a href="#">promoções</a>
         <a href="#">móveis</a>

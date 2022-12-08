@@ -1,126 +1,61 @@
 import { Box, Button, Card, CardActions, CardContent, CardMedia, Typography } from "@material-ui/core";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./Produtos.css"
 import Mesa from "./mesa.jpg"
 import Cart from "./cart.svg"
-import { Skeleton } from "@mui/material";
+import { useSelector } from "react-redux";
+import TokenState from "../../store/tokens/tokenReducer";
+import { useNavigate } from "react-router-dom";
+import { busca } from "../../service/Service"; 
+import Produtos from "../../model/Produto";
 
 
-function Produtos(){
+
+function ListarProdutos(){
+  const [produtos, setProdutos] = useState<Produtos[]>([]);
+  const token = useSelector<TokenState, TokenState["tokens"]>(
+    (state) => state.tokens
+  )
+  let navigate = useNavigate();
+
+  useEffect(() => {
+    if (token == "") {
+      alert("VocÃª precisa estar logado!");
+      navigate("/login");
+    }
+  }, [token]);
+
+  async function getProduto() {
+    await busca("/produtos/all", setProdutos, {
+      headers: {
+        Authorization: token,
+      },
+    });
+  }
+  useEffect(() => {
+    getProduto();   
+  }, [produtos.length]);
+
+
 return (
 <>
+{produtos.map((produto) => (
 <Box className="container">
-
     <Card className="cardProduto">
       <CardMedia className="fotoCardProduto" component="img" width="100%" image={Mesa} alt="perfil" />
       <CardContent>
-        <Typography variant="h5" component="div">Mesa Super Soft</Typography>
+        <Typography variant="h5" component="div">{produto.nome}</Typography>  
         <Typography className="cardCategoria">
-          Móveis<strong className="cardPreco">R$590,99</strong>
-        </Typography>
+        {produto.descricao}<strong className="cardPreco">{produto.valor}</strong>
+        </Typography> 
       </CardContent>
       <CardActions className="socialPerfil">
         <Button size="small" className="btnComprar">Comprar</Button>
         <Button size="small" className="btnCarrinho">Adicionar <img src={Cart} alt="" /></Button>
       </CardActions>
     </Card> 
-    
-      {/* COMEÇO DO TESTE */}
-    <Card className="cardProduto">
-      <CardMedia className="fotoCardProduto" component="img" width="100%" image={Mesa} alt="perfil" />
-      <CardContent>
-        <Typography variant="h5" component="div">Mesa Super Soft</Typography>
-        <Typography className="cardCategoria">
-          Móveis<strong className="cardPreco">R$590,99</strong>
-        </Typography>
-      </CardContent>
-      <CardActions className="socialPerfil">
-        <Button size="small" className="btnComprar">Comprar</Button>
-        <Button size="small" className="btnCarrinho">Adicionar <img src={Cart} alt="" /></Button>
-      </CardActions>
-    </Card> 
-    <Card className="cardProduto">
-      <CardMedia className="fotoCardProduto" component="img" width="100%" image={Mesa} alt="perfil" />
-      <CardContent>
-        <Typography variant="h5" component="div">Mesa Super Soft</Typography>
-        <Typography className="cardCategoria">
-          Móveis<strong className="cardPreco">R$590,99</strong>
-        </Typography>
-      </CardContent>
-      <CardActions className="socialPerfil">
-        <Button size="small" className="btnComprar">Comprar</Button>
-        <Button size="small" className="btnCarrinho">Adicionar <img src={Cart} alt="" /></Button>
-      </CardActions>
-    </Card> 
-    <Card className="cardProduto">
-      <CardMedia className="fotoCardProduto" component="img" width="100%" image={Mesa} alt="perfil" />
-      <CardContent>
-        <Typography variant="h5" component="div">Mesa Super Soft</Typography>
-        <Typography className="cardCategoria">
-          Móveis<strong className="cardPreco">R$590,99</strong>
-        </Typography>
-      </CardContent>
-      <CardActions className="socialPerfil">
-        <Button size="small" className="btnComprar">Comprar</Button>
-        <Button size="small" className="btnCarrinho">Adicionar <img src={Cart} alt="" /></Button>
-      </CardActions>
-    </Card> 
-    <Card className="cardProduto">
-      <CardMedia className="fotoCardProduto" component="img" width="100%" image={Mesa} alt="perfil" />
-      <CardContent>
-        <Typography variant="h5" component="div">Mesa Super Soft</Typography>
-        <Typography className="cardCategoria">
-          Móveis<strong className="cardPreco">R$590,99</strong>
-        </Typography>
-      </CardContent>
-      <CardActions className="socialPerfil">
-        <Button size="small" className="btnComprar">Comprar</Button>
-        <Button size="small" className="btnCarrinho">Adicionar <img src={Cart} alt="" /></Button>
-      </CardActions>
-    </Card> 
-    <Card className="cardProduto">
-      <CardMedia className="fotoCardProduto" component="img" width="100%" image={Mesa} alt="perfil" />
-      <CardContent>
-        <Typography variant="h5" component="div">Mesa Super Soft</Typography>
-        <Typography className="cardCategoria">
-          Móveis<strong className="cardPreco">R$590,99</strong>
-        </Typography>
-      </CardContent>
-      <CardActions className="socialPerfil">
-        <Button size="small" className="btnComprar">Comprar</Button>
-        <Button size="small" className="btnCarrinho">Adicionar <img src={Cart} alt="" /></Button>
-      </CardActions>
-    </Card> 
-    <Card className="cardProduto">
-      <CardMedia className="fotoCardProduto" component="img" width="100%" image={Mesa} alt="perfil" />
-      <CardContent>
-        <Typography variant="h5" component="div">Mesa Super Soft</Typography>
-        <Typography className="cardCategoria">
-          Móveis<strong className="cardPreco">R$590,99</strong>
-        </Typography>
-      </CardContent>
-      <CardActions className="socialPerfil">
-        <Button size="small" className="btnComprar">Comprar</Button>
-        <Button size="small" className="btnCarrinho">Adicionar <img src={Cart} alt="" /></Button>
-      </CardActions>
-    </Card> 
-    <Card className="cardProduto">
-      <CardMedia className="fotoCardProduto" component="img" width="100%" image={Mesa} alt="perfil" />
-      <CardContent>
-        <Typography variant="h5" component="div">Mesa Super Soft</Typography>
-        <Typography className="cardCategoria">
-          Móveis<strong className="cardPreco">R$590,99</strong>
-        </Typography>
-      </CardContent>
-      <CardActions className="socialPerfil">
-        <Button size="small" className="btnComprar">Comprar</Button>
-        <Button size="small" className="btnCarrinho">Adicionar <img src={Cart} alt="" /></Button>
-      </CardActions>
-    </Card> 
-    {/* FIM DO TESTE */}
-
-</Box>
+    </Box>
+     ))}
 </>
-)
-}
-export default Produtos;
+)}
+export default ListarProdutos;
