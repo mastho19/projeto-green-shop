@@ -16,10 +16,10 @@ import CardMedia from '@mui/material/CardMedia';
 import { lightGreen } from "@material-ui/core/colors";
 import Carousel from "./slideshow/SlideShow";
 import { countries } from "./slideshow/Data"
-const area_externa =  require('./img/area_externa.jpg');
-const jardim = require('./img/jardim.jpg');
-const cozinha = require('./img/cozinha.jpg')
-const salalazer = require('./img/salalazer.jpg')
+const area_externa =  require('./img/area_externa.png');
+const jardim = require('./img/jardim.png');
+const cozinha = require('./img/cozinha.png')
+const salalazer = require('./img/salalazer.png')
 
 
 
