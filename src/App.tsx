@@ -10,6 +10,7 @@ import Cadastro from './paginas/cadastro/cadastro';
 import Produtos from './paginas/produtos/Produtos'
 import { Provider } from 'react-redux';
 import store from './store/store';
+import CadastroProduto from './paginas/cadastroProdutos/cadastroProdutos';
 
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
           <Route path='/sobre-nos' element={<SobreNos/>}/>
           <Route path='/cadastro' element={<Cadastro/>}/>
           <Route path='/produtos' element={<Produtos/>}/>
+          <Route path='/cadastro-produtos' element={<CadastroProduto/>}/>
         </Routes>
         <Footer/>
       </Router>

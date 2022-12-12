@@ -46,9 +46,6 @@ function Login() {
   }
 
 
-
-
-
   let navigate = useNavigate();
   const [token, setToken] = useLocalStorage('token');
   const [userLogin, setUserLogin] = useState<UserLogin>(
@@ -73,11 +70,6 @@ function Login() {
       navigate('/home')
     }
   }, [token])
-
-
-    
-
-
 
 
 
