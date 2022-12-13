@@ -13,12 +13,25 @@ import FormControl from "@mui/material/FormControl";
 import SearchIcon from '@mui/icons-material/Search';
 import { Link, useNavigate } from "react-router-dom";
 import FadeMenu from "../../menuDrop/menuDrop";
+import { useDispatch, useSelector } from "react-redux";
+import { addToken } from "../../../store/tokens/action";
+import TokenState from "../../../store/tokens/tokenReducer";
 
 
 function Navbar() {
 
+  const navigate= useNavigate()
+  const token= useSelector<TokenState, TokenState["tokens"]>(
+    (state)=> state.tokens
+  )
+  const dispacht= useDispatch()
 
 
+  function goLogaut(){
+      dispacht(addToken(''));
+      navigate('/login')
+  }
+  
   return (
     <>
       <AppBar position="static" className="appbar">
@@ -86,7 +99,7 @@ function Navbar() {
           </Box>
         </Toolbar>
         <Toolbar className="bar2">
-          <Link to='/produtos'>
+          <Link to='/produtos/all'>
                 <Typography>
                     produtos
                 </Typography>

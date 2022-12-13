@@ -7,7 +7,9 @@ import { useEffect, useState } from 'react';
 import Categoria from '../../model/Categoria';
 import { useNavigate } from 'react-router-dom';
 import { busca } from '../../service/Service';
-import useLocalStorage from 'react-use-localstorage';
+import { useSelector } from 'react-redux';
+import TokenState from '../../store/tokens/tokenReducer';
+
 
 export default function FadeMenu() {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
@@ -20,7 +22,9 @@ export default function FadeMenu() {
   };
 
   const [categorias, setCategorias] = useState<Categoria[]>([]);
-  const [token, setToken] = useLocalStorage('token')
+  const token = useSelector<TokenState, TokenState["tokens"]>(
+    (state) => state.tokens
+  )
   let navigate = useNavigate();
 
 

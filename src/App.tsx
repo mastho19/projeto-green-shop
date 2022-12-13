@@ -17,8 +17,6 @@ function App() {
   return (
     <>
     <Provider store={store}>
-
-    
       <Router>
         <Navbar/>
         <Routes>
@@ -26,7 +24,7 @@ function App() {
           <Route path='/login' element={<Login/>}/>
           <Route path='/sobre-nos' element={<SobreNos/>}/>
           <Route path='/cadastro' element={<Cadastro/>}/>
-          <Route path='/produtos' element={<Produtos/>}/>
+          <Route path='/produtos/all' element={<Produtos/>}/>
           <Route path='/cadastro-produtos' element={<CadastroProduto/>}/>
         </Routes>
         <Footer/>

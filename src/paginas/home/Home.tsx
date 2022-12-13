@@ -1,4 +1,4 @@
-import React  from "react";
+import React, { useEffect }  from "react";
 import './Home.css';
 import { Button, Grid, Typography } from '@material-ui/core';
 import Avatar from '@mui/material/Avatar';
@@ -16,14 +16,28 @@ import CardMedia from '@mui/material/CardMedia';
 import { lightGreen } from "@material-ui/core/colors";
 import Carousel from "./slideshow/SlideShow";
 import { countries } from "./slideshow/Data"
+import { useNavigate } from "react-router-dom";
+import TokenState from "../../store/tokens/tokenReducer";
+import { useSelector } from "react-redux";
 const area_externa =  require('./img/area_externa.png');
 const jardim = require('./img/jardim.png');
 const cozinha = require('./img/cozinha.png')
 const salalazer = require('./img/salalazer.png')
 
-
-
 function Home() {
+
+    let navigate = useNavigate();
+    const token = useSelector<TokenState,TokenState["tokens"]>(
+    (state)=>  state.tokens
+    )
+    
+    useEffect(() => {
+      if (token == "") {
+          alert("Você precisa estar logado")
+          navigate("/login")
+  
+      }
+  }, [token])
 
     return (
         <>

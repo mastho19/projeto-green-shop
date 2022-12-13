@@ -18,13 +18,13 @@ function CadastroProduto() {
         (state) => state.tokens
       )
 
-   /*  useEffect(() => {
+    useEffect(() => {
         if (token == "") {
             alert("VocÃª precisa estar logado")
             navigate("/login")
 
         }
-    }, [token]) */
+    }, [token])
 
     const [categoria, setCategoria] = useState<Categoria>(
         {
