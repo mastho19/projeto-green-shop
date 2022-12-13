@@ -107,7 +107,11 @@ function Navbar() {
         <FadeMenu/>
         <a href="#">promoções</a>
         <a href="#">móveis</a>
-        <a href="#">decoração</a>
+        <Link to='/categorias'>
+                <Typography>
+                    DELETAR
+                </Typography>
+          </Link>
         <a href="#">blog</a>
         </Toolbar>
       </AppBar>

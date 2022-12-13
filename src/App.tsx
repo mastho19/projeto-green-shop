@@ -7,10 +7,16 @@ import Navbar from './components/estaticos/navbar/Navbar';
 import Home from './paginas/home/Home';
 import Footer from './components/estaticos/footer/footer';
 import Cadastro from './paginas/cadastro/cadastro';
-import Produtos from './paginas/produtos/Produtos'
 import { Provider } from 'react-redux';
 import store from './store/store';
 import CadastroProduto from './paginas/cadastroProdutos/cadastroProdutos';
+import Produtos from './paginas/produtos/listarProdutos/Produtos';
+import AtualizarCategoria from './components/categorias/atualizarCategoria/atualizarCategoria';
+import ListaCategorias from './paginas/categorias/listaCategorias/listaCategorias';
+
+
+
+
 
 
 function App() {
@@ -25,7 +31,9 @@ function App() {
           <Route path='/sobre-nos' element={<SobreNos/>}/>
           <Route path='/cadastro' element={<Cadastro/>}/>
           <Route path='/produtos/all' element={<Produtos/>}/>
-          <Route path='/cadastro-produtos' element={<CadastroProduto/>}/>
+          <Route path='/cadastrar/produtos' element={<CadastroProduto/>}/>
+          <Route path='/cadastrar/categoria' element={<AtualizarCategoria/>}/>
+          <Route path='/categorias' element={<ListaCategorias/>}/>
         </Routes>
         <Footer/>
       </Router>
