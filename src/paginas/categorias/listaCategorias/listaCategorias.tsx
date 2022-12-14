@@ -26,7 +26,7 @@ function ListaCategorias () {
 
 
   async function getCategoria(){
-    await busca("/categorias", setCategorias, {
+    await busca("/categorias/all", setCategorias, {
       headers: {
         'Authorization': token
       }
@@ -64,7 +64,7 @@ function ListaCategorias () {
                   </Link>
                 </Box>
               </Link>
-              <Link to={`/deletarTema/${categoria.id_categoria}`} className="text-decorator-none">
+              <Link to={`/categorias/deletar/${categoria.id_categoria}`} className="text-decorator-none">
                 <Box mx={1}>
                   <Button variant="contained" size='small' color="secondary">
                     deletar

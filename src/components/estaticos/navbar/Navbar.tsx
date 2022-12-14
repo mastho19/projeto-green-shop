@@ -109,7 +109,7 @@ function Navbar() {
         <a href="#">móveis</a>
         <Link to='/categorias'>
                 <Typography>
-                    DELETAR
+                    Categorias
                 </Typography>
           </Link>
         <a href="#">blog</a>
