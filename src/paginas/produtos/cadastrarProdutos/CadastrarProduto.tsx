@@ -14,12 +14,11 @@ import {
 } from "@material-ui/core";
 import "./CadastrarProduto.css";
 import { Link, useNavigate, useParams } from "react-router-dom";
-
+import { busca, buscaId, post, put } from "../../../service/Service";
 import { useSelector } from "react-redux";
 import TokenState from "../../../store/tokens/tokenReducer";
 import Categoria from "../../../model/Categoria";
 import Produtos from "../../../model/Produto";
-import { busca, buscaId, post, put } from "../../../service/Service";
 
 function CadastroProduto() {
   let navigate = useNavigate();
@@ -31,7 +30,7 @@ function CadastroProduto() {
 
   /*  useEffect(() => {
         if (token == "") {
-            alert("Você precisa estar logado")
+            alert("VocÃª precisa estar logado")
             navigate("/login")
 
         }
@@ -96,14 +95,14 @@ function CadastroProduto() {
     e.preventDefault();
 
     if (id !== undefined) {
-      put(`/produtos`, produto, setProduto, {
+      put(`/produtos/atualizar`, produto, setProduto, {
         headers: {
           Authorization: token,
         },
       });
       alert("Produto atualizado com sucesso!");
     } else {
-      post(`/produtos/`, produto, setProduto, {
+      post(`/produtos/cadastrar`, produto, setProduto, {
         headers: {
           Authorization: token,
         },
@@ -148,6 +147,7 @@ function CadastroProduto() {
                 variant="outlined"
                 name="nome"
                 margin="normal"
+                inputProps={{ maxLength: 15 }}
                 fullWidth
               />
 
@@ -161,6 +161,7 @@ function CadastroProduto() {
                 variant="outlined"
                 name="descricao"
                 margin="normal"
+                inputProps={{ maxLength: 20 }}
                 fullWidth
               />
 
@@ -223,7 +224,7 @@ function CadastroProduto() {
              
 
               <Box marginTop={2} textAlign="center">
-                <Link to="/home" className="text-decorator-none">
+                <Link to="/produtos" className="text-decorator-none">
                   <Button
                     variant="contained"
                     color="secondary"

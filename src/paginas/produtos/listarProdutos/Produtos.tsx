@@ -6,21 +6,19 @@ import {
   CardContent,
   CardMedia,
   Theme,
-  Typography,
-  makeStyles,
-  createStyles
+  Typography
 } from "@material-ui/core";
 import React, { useEffect, useState } from "react";
 import "./Produtos.css";
 import Mesa from "./mesa.jpg";
+import AddCircleIcon from '@mui/icons-material/AddCircle';
+import Mais from "./mais.svg";
 import Cart from "./cart.svg";
 import { useSelector } from "react-redux";
 import TokenState from "../../../store/tokens/tokenReducer";
 import { Link, useNavigate } from "react-router-dom";
-import Produtos from "../../../model/Produto";
-import CloseIcon from '@material-ui/icons/Close';
-import Modal from '@material-ui/core/Modal';
 import { busca } from "../../../service/Service";
+import Produtos from "../../../model/Produto";
 
 function ListarProdutos() {
   const [produtos, setProdutos] = useState<Produtos[]>([]);
@@ -31,7 +29,7 @@ function ListarProdutos() {
 
   useEffect(() => {
     if (token == "") {
-      alert("Você precisa estar logado!");
+      alert("VocÃª precisa estar logado!");
       navigate("/login");
     }
   }, [token]);
@@ -46,7 +44,7 @@ function ListarProdutos() {
   useEffect(() => {
     getProduto();
   }, [produtos.length]);
-  
+
   return (
     <>
       <Link to="/produtos/cadastrar" className="text-decorator-none">
@@ -55,30 +53,18 @@ function ListarProdutos() {
           color="secondary"
           className="btnAdicionarProduto"
         >
-          Novo Produto
+          <AddCircleIcon/>
         </Button>
       </Link>
-
-      <Link to="/produtos/cadastrar" className="text-decorator-none">
-        <Button
-          variant="contained"
-          color="secondary"
-          className="btnAdicionarProduto"
-        >
-          Nova Categoria
-        </Button>
-      </Link>
-
       <Box className="container">
         {produtos.map((produto) => (
-          <Link to="">
             <Card className="cardProduto">
               <CardMedia
                 className="fotoCardProduto"
                 component="img"
                 width="100%"
-                image={Mesa}
-                alt="perfil"
+                image={produto.foto}
+                alt="foto produto"
               />
               <CardContent>
                 <Typography variant="h5" component="div">
@@ -96,9 +82,34 @@ function ListarProdutos() {
                 <Button size="small" className="btnCarrinho">
                   Adicionar <img src={Cart} alt="" />
                 </Button>
+
+
+                <Box className="btnCard" mb={1.5}>
+                <Link
+                  to={`/produtos/cadastrar/${produto.id_produto}`}
+                  className="text-decorator-none"
+                >
+                  <Box mx={1}>
+                    <Button variant="contained" className="btnAtualizar marginLeft" size="small">
+                      atualizar
+                    </Button>
+                  </Box>
+                </Link>
+                <Link
+                  to={`/produtos/deletar/${produto.id_produto}`}
+                  className="text-decorator-none"
+                >
+                  <Box mx={1}>
+                    <Button variant="contained" size="small" className="btnDeletar">
+                      deletar
+                    </Button>
+                  </Box>
+                </Link>
+              </Box>
+
+
               </CardActions>
             </Card>
-          </Link>
         ))}
       </Box>
     </>
