@@ -11,8 +11,9 @@ import { Provider } from 'react-redux';
 import store from './store/store';
 import CadastroProduto from './paginas/cadastroProdutos/cadastroProdutos';
 import Produtos from './paginas/produtos/listarProdutos/Produtos';
-import AtualizarCategoria from './components/categorias/atualizarCategoria/atualizarCategoria';
 import ListaCategorias from './paginas/categorias/listaCategorias/listaCategorias';
+import DeletarCategoria from './paginas/categorias/deletarCategorias/deletarCategoria';
+import CadastroCategoria from './paginas/categorias/cadastrarCategorias/cadastrarCategoria';
 
 
 
@@ -32,10 +33,12 @@ function App() {
           <Route path='/cadastro' element={<Cadastro/>}/>
           <Route path='/produtos/all' element={<Produtos/>}/>
           <Route path='/cadastrar/produtos' element={<CadastroProduto/>}/>
-          <Route path='/cadastrar/categoria' element={<AtualizarCategoria/>}/>
           <Route path='/categorias' element={<ListaCategorias/>}/>
+          <Route path='/deletar/categoria/:id_categoria' element={<DeletarCategoria/>}/>
+          <Route path="/cadastrar/categoria" element={<CadastroCategoria />} />
+          <Route path="/atualizar/categoria/:id_categoria" element={<CadastroCategoria />} />
         </Routes>
-        <Footer/>
+        <Footer/> 
       </Router>
       </Provider>
     </>

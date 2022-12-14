@@ -7,6 +7,7 @@ import Categoria from '../../../model/Categoria';
 import TokenState from '../../../store/tokens/tokenReducer';
 import { useSelector } from 'react-redux';
 import { busca } from '../../../service/Service';
+import AddCircleIcon from '@mui/icons-material/AddCircle';
 
 
 
@@ -40,6 +41,15 @@ function ListaCategorias () {
 
   return (
     <>
+     <Link to="/cadastrar/categoria" className="text-decorator-none">
+        <Button
+          variant="contained"
+          color="secondary"
+          className="btnAdicionarProduto"
+        >
+          <AddCircleIcon/>
+        </Button>
+      </Link>
     {
       categoria.map(categoria =>(
       <Box m={2} >
@@ -55,16 +65,16 @@ function ListaCategorias () {
           <CardActions>
             <Box display="flex" justifyContent="center" mb={1.5} >
 
-              <Link to={`/formularioTema/${categoria.id_categoria}`} className="text-decorator-none">
+              <Link to={`/atualizar/categoria/${categoria.id_categoria}`} className="text-decorator-none">
                 <Box mx={1}>
-                <Link to= {`/formularioTema/${categoria.id_categoria}`} className="text-decorator-none cursor">
+                <Link to= {`/atualizar/categoria/${categoria.id_categoria}`} className="text-decorator-none cursor">
                   <Button variant="contained" className="marginLeft" size='small' color="primary" >
                     atualizar
                   </Button>
                   </Link>
                 </Box>
               </Link>
-              <Link to={`/categorias/deletar/${categoria.id_categoria}`} className="text-decorator-none">
+              <Link to={`/deletar/categoria/${categoria.id_categoria}`} className="text-decorator-none">
                 <Box mx={1}>
                   <Button variant="contained" size='small' color="secondary">
                     deletar
