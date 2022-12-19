@@ -5,12 +5,13 @@ import MenuItem from '@mui/material/MenuItem';
 import Fade from '@mui/material/Fade';
 import { useEffect, useState } from 'react';
 import Categoria from '../../model/Categoria';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { busca } from '../../service/Service';
 import { useSelector } from 'react-redux';
 import TokenState from '../../store/tokens/tokenReducer';
 import "./menuDrop.css";
 import { Typography } from '@material-ui/core';
+import ListaCategorias from '../../paginas/categorias/listaCategorias/listaCategorias';
 
 export default function FadeMenu() {
 
@@ -71,6 +72,7 @@ export default function FadeMenu() {
         {categorias.map((categoria) => (
         <MenuItem onClick={handleClose}>{categoria.ambiente}</MenuItem>
         ))}
+      <Link to='/categorias'>Lista de Categorias</Link>
       </Menu>
     </div>
   );
