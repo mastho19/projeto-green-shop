@@ -9,9 +9,11 @@ import { useNavigate } from 'react-router-dom';
 import { busca } from '../../service/Service';
 import { useSelector } from 'react-redux';
 import TokenState from '../../store/tokens/tokenReducer';
-
+import "./menuDrop.css";
+import { Typography } from '@material-ui/core';
 
 export default function FadeMenu() {
+
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
   const handleClick = (event: React.MouseEvent<HTMLElement>) => {
@@ -22,19 +24,24 @@ export default function FadeMenu() {
   };
 
   const [categorias, setCategorias] = useState<Categoria[]>([]);
+
   const token = useSelector<TokenState, TokenState["tokens"]>(
     (state) => state.tokens
-  )
+  );
   let navigate = useNavigate();
 
-
+  useEffect(() => {
+    getCategoria()
+  }, [token])
 
   async function getCategoria() {
     await busca("/categorias/all", setCategorias, {
       headers: {
         'Authorization': token
       },
-    });
+    }
+    )
+    console.log(token);
   }
   useEffect(() => {
     getCategoria();   
@@ -49,7 +56,7 @@ export default function FadeMenu() {
         aria-expanded={open ? 'true' : undefined}
         onClick={handleClick}
       >
-        Categorias
+        <Typography className='btnCategorias'>Categorias</Typography>
       </Button>
       <Menu
         id="fade-menu"

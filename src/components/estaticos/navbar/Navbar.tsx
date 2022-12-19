@@ -11,12 +11,14 @@ import Input from "@mui/material/Input";
 import InputAdornment from "@mui/material/InputAdornment";
 import FormControl from "@mui/material/FormControl";
 import SearchIcon from '@mui/icons-material/Search';
+import MenuBarrinha from "./menu/Menu";
 import { Link, useNavigate } from "react-router-dom";
 import FadeMenu from "../../menuDrop/menuDrop";
 import { useDispatch, useSelector } from "react-redux";
 import { addToken } from "../../../store/tokens/action";
 import TokenState from "../../../store/tokens/tokenReducer";
 import ModalCarrinho from "../../carrinho/modalCarrinho";
+import MenuDrop from '../../menuDrop/menuDrop'
 
 
 function Navbar() {
@@ -32,51 +34,50 @@ function Navbar() {
       dispacht(addToken(''));
       navigate('/login')
   }
-  
+
   return (
     <>
-      <AppBar position="static" className="appbar">
+      <AppBar position="fixed" className="appbar">
         <Toolbar variant="dense" className="bar">
-
-         <Box>
-         <div className="menuicons">
-            <div className="menuicon"></div>
-            <div className="menuicon"></div>
-            <div className="menuicon"></div>
-         </div>
-         </Box>
+        
+          
+        <div className="MenuBarrinha"><MenuBarrinha /></div>
 
           <Box className="logo">
             <Typography className="text-logo" variant="h5" color="inherit">
-              GreenShop
-              <div className="barrinha"></div>
+              <a className="LogoEffect">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <div data-text='GreenShop' className="Shop">
+                  GreenShop 
+                  <div className="barrinha"></div>
+                </div>
+              </a>
             </Typography>
           </Box>
 
           <Box className="menu-right" display="flex">
+
+
             <Box className="pesquisa">
               <FormControl variant="standard" color='success' >
-                <Input
-                placeholder="Buscar Produtos"
-                  startAdornment={
-                    <InputAdornment position="start">
-                      <SearchIcon className="lupa"/>
-                    </InputAdornment>
-                  }
-                />
+                <Input placeholder="Buscar Produtos" startAdornment={<InputAdornment position="start"><SearchIcon className="lupa" /></InputAdornment>} />
               </FormControl>
             </Box>
 
-            <Box>
+            <Box className="Poupup">
               <PopupState variant="popover" popupId="demo-popup-menu">
                 {(popupState) => (
                   <React.Fragment>
                     <Button
-                      className="perfil"
+                      className="perfil" 
                       variant="contained"
                       {...bindTrigger(popupState)}
                     >
-                      Minha Conta
+                      <div className="conta">Minha Conta</div>
+                      <div className="conta2"><img src={require('../navbar/img/perfil.png')} width='29' height='29'/></div>
                     </Button>
                     <Menu {...bindMenu(popupState)}>
                       <MenuItem onClick={popupState.close}>Perfil</MenuItem>
@@ -96,25 +97,19 @@ function Navbar() {
               </div>
             </Box>
 
+
           </Box>
         </Toolbar>
+
         <Toolbar className="bar2">
-          <Link to='/produtos/all'>
-                <Typography>
-                    produtos
-                </Typography>
-          </Link>
-        <FadeMenu/>
-        <a href="#">promoções</a>
-        <a href="#">móveis</a>
-        <Link to='/categorias'>
-                <Typography>
-                    Categorias
-                </Typography>
-          </Link>
-        <a href="#">blog</a>
+        <Link to='/home'>Home</Link>          
+        <Link to='/produtos/all'>produtos</Link>
+        <MenuDrop/>
+        <Link to='/sobre-nos'>Sobre Nós</Link>
         </Toolbar>
+
       </AppBar>
+
     </>
   );
 }

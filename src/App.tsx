@@ -9,7 +9,7 @@ import Footer from './components/estaticos/footer/footer';
 import Cadastro from './paginas/cadastro/cadastro';
 import { Provider } from 'react-redux';
 import store from './store/store';
-import CadastroProduto from './paginas/cadastroProdutos/cadastroProdutos';
+import CadastrarProduto from './paginas/produtos/cadastrarProdutos/CadastrarProduto';
 import Produtos from './paginas/produtos/listarProdutos/Produtos';
 import ListaCategorias from './paginas/categorias/listaCategorias/listaCategorias';
 import DeletarCategoria from './paginas/categorias/deletarCategorias/deletarCategoria';
@@ -32,7 +32,7 @@ function App() {
           <Route path='/sobre-nos' element={<SobreNos/>}/>
           <Route path='/cadastro' element={<Cadastro/>}/>
           <Route path='/produtos/all' element={<Produtos/>}/>
-          <Route path='/cadastrar/produtos' element={<CadastroProduto/>}/>
+          <Route path='/cadastrar/produtos' element={<CadastrarProduto/>}/>
           <Route path='/categorias' element={<ListaCategorias/>}/>
           <Route path='/deletar/categoria/:id_categoria' element={<DeletarCategoria/>}/>
           <Route path="/cadastrar/categoria" element={<CadastroCategoria />} />

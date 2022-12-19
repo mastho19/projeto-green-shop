@@ -1,4 +1,11 @@
-.container{
+* {
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    box-sizing: border-box;
+  }
+
+.containerSN{
     display: flex;
     background-color: #111;
     color: white !important;
@@ -10,25 +17,34 @@
     font-weight: bold;
     color: #e3e3e3;
 }
-.barrinha{
+.barrinha2{
     width: 220px;
-    border-radius: 3px;
-    height: 5px;
+    border-radius: 1px;
+    height: 3px;
     background-color: #00a470;
-    margin: 5px;
+    margin: 0px 0px 20px 0px;
+}
+.margin-text {
+    margin: 0px 0px 0px 100px;
+
 }
 .boxPerfil{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
 }
-.imagem {
-    width: 600px;
+.imagem-sobreNos {
+    display: flex;
+    margin: 0px 0px 0px 40px;
+    width: 560px;
     height: auto;
-    border-radius: 5px;
 }
-.card{
-    margin: 20px;
+.imagem-sobreNos:hover {
+    transform: scale(1.10);
+    transition: 0.5s all ease-in-out;
+}
+.card2{
+    margin: 30px 20px;
     width: 200px;
     height: 250px;
 }
@@ -40,15 +56,19 @@
 
 .card:hover{
     transform: scale(1.03);
-    transition: 0.2s all ease-in-out;
+    transition: 0.5s all ease-in-out;
 }
-.socialPerfil button{
-    background-color: #00a470;
-    color: #fff;
+.logo-redes{
+    display: inline;
+    padding: 10px;
+
+
 }
-.socialPerfil button:hover{
-    background-color: #222;
+
+.cor-logo{
+    fill: #00a470;
 }
+
 .desenvolvedores{
     display: flex;
     align-items: center;
@@ -60,4 +80,31 @@
     color: #222 !important;
     text-transform: uppercase;
     font-weight: bold;
+}
+.ul-cards {
+    display: flex;
+    flex-wrap: wrap;
+    list-style-type: none;
+    justify-content: center;
+    margin: 0px 270px 0px 270px;
+}
+.li-cards {
+    text-align: center;
+    
+}
+.card-body {
+    background: #c0ddc3 !important;
+    box-shadow: 2px 2px 6px 0px rgba(50, 50, 50, 0.22);
+}
+
+.card-body:hover {
+    color: #000000;
+    transform: scale(1.1);
+    transition: 0.5s;
+  }
+
+@media screen and (max-width: 1000px) {
+    .ul-cards {
+        margin: 0px 140px 0px 140px;
+    }
 }

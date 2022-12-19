@@ -3,8 +3,7 @@ import { Box } from "@mui/material";
 import React, { ChangeEvent, useState, useEffect } from "react";
 import { useDispatch } from 'react-redux'
 import { Link, useNavigate } from "react-router-dom";
-
-import UserLogin from "../../model/userLogin";
+import UserLogin from "../../model/userLogin"
 import { login } from '../../service/Service'
 import { addToken } from "../../store/tokens/action";
 import "./login.css";
@@ -17,36 +16,12 @@ function Login() {
   const [token, setToken ] = useState("")
 
 
-  const [usuario, setUsuario] = useState<String>('')
+  const [usuario] = useState<String>('')
   const [erroUsuario, setErroUsuario] = useState<String>('')
 
 
-  const [senha, setSenha] = useState<String>('')
+  const [senha] = useState<String>('')
   const [erroSenha, setErroSenha] = useState<String>('')
-
-  async function onSubmit(e: ChangeEvent<HTMLFormElement>) {
-    e.preventDefault()
-
-    if (usuario.length < 3) {
-      setErroUsuario('erro')
-    }
-    console.log(usuario)
-
-    if (senha.length < 5) {
-      setErroSenha('erro')
-    }
-    console.log(senha)
-
-    try{
-      await login(`/auth/logar`, userLogin, setToken)
-  
-        alert('Usuário logado com sucesso!');
-    }catch(error){
-        alert('Dados do usuário inconsistentes. Erro ao logar!');
-    }
-
-
-  }
 
 
   let navigate = useNavigate();
@@ -59,6 +34,43 @@ function Login() {
       
     }
   )
+ 
+
+  async function onSubmit(e: ChangeEvent<HTMLFormElement>) {
+    e.preventDefault()
+
+    
+
+    if (userLogin.usuario.length < 3) {
+      setErroUsuario('erro')
+    }else{
+      setErroUsuario('')
+    }
+    
+    console.log(usuario.length)
+
+    if (userLogin.senha.length < 5) {
+      setErroSenha('erro')
+    }else{
+      setErroSenha('')
+    }
+
+    console.log(senha.length)
+ 
+
+
+
+    try{
+      await login(`/auth/logar`, userLogin, setToken)
+  
+        alert('Usuário logado com sucesso!');
+    }catch(error){
+        alert('Dados do usuário inconsistentes. Erro ao logar!');
+    }
+
+
+  }
+
 
   function updatedModel(e: ChangeEvent<HTMLInputElement>) {
 

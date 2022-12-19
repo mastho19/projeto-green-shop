@@ -6,19 +6,23 @@ import {
   CardContent,
   CardMedia,
   Theme,
-  Typography
+  Typography,
 } from "@material-ui/core";
 import React, { useEffect, useState } from "react";
 import "./Produtos.css";
-import Mesa from "./mesa.jpg";
-import AddCircleIcon from '@mui/icons-material/AddCircle';
-import Mais from "./mais.svg";
-import Cart from "./cart.svg";
+import Dots from "./img/dots.svg";
+import Cart from "./img/cart.svg";
+import Edit from "./img/edit.svg";
+import Delete from "./img/delete.svg";
 import { useSelector } from "react-redux";
 import TokenState from "../../../store/tokens/tokenReducer";
 import { Link, useNavigate } from "react-router-dom";
 import { busca } from "../../../service/Service";
 import Produtos from "../../../model/Produto";
+import AddCircleIcon from '@mui/icons-material/AddCircle';
+import Modal from '../modal/Modal'
+import '.././modal/Modal.css';
+import { ClassNames } from "@emotion/react";
 
 function ListarProdutos() {
   const [produtos, setProdutos] = useState<Produtos[]>([]);
@@ -26,13 +30,6 @@ function ListarProdutos() {
     (state) => state.tokens
   );
   let navigate = useNavigate();
-
-  useEffect(() => {
-    if (token == "") {
-      alert("VocÃª precisa estar logado!");
-      navigate("/login");
-    }
-  }, [token]);
 
   async function getProduto() {
     await busca("/produtos/all", setProdutos, {
@@ -45,71 +42,69 @@ function ListarProdutos() {
     getProduto();
   }, [produtos.length]);
 
+  const [openModal, setOpenModal] = useState(false);
+
   return (
     <>
-      <Link to="/produtos/cadastrar" className="text-decorator-none">
-        <Button
-          variant="contained"
-          color="secondary"
-          className="btnAdicionarProduto"
-        >
-          <AddCircleIcon/>
+      <div className="btn-cadastrar">
+        <Button onClick={() => setOpenModal(true)} className="modalButton">
+          <a className="cadastrar1">
+            <AddCircleIcon />
+          </a>
         </Button>
-      </Link>
+        <Modal open={openModal} onClose={() => setOpenModal(false)} />
+      </div>
       <Box className="container">
         {produtos.map((produto) => (
-            <Card className="cardProduto">
-              <CardMedia
-                className="fotoCardProduto"
-                component="img"
-                width="100%"
-                image={produto.foto}
-                alt="foto produto"
-              />
-              <CardContent>
-                <Typography variant="h5" component="div">
-                  {produto.nome}
-                </Typography>
-                <Typography className="cardCategoria">
-                  {produto.descricao}
-                  <strong className="cardPreco">{produto.valor}</strong>
-                </Typography>
-              </CardContent>
-              <CardActions className="socialPerfil">
-                <Button size="small" className="btnComprar">
-                  Comprar
-                </Button>
-                <Button size="small" className="btnCarrinho">
-                  Adicionar <img src={Cart} alt="" />
-                </Button>
+          <Card className="cardProduto">
+            <CardMedia
+              className="fotoCardProduto"
+              component="img"
+              width="100%"
+              image={produto.foto}
+              alt="foto produto"
+            />
+            <CardContent>
+              <Typography className="cardNome" variant="h5" component="div">
+                {produto.nome}
+                <strong className="cardPreco">R${produto.valor}</strong>
+              </Typography>
 
+              {/*  <Typography className="cardCategoria">#{produto.categoria} </Typography> */}
 
-                <Box className="btnCard" mb={1.5}>
+              <Typography className="cardDescricao">
+                {produto.descricao}
+              </Typography>
+            </CardContent>
+            <CardActions className="socialPerfil">
+              <Button size="small" className="btnComprar">
+                Comprar
+              </Button>
+              <Button size="small" className="btnCarrinho">
+                Adicionar <img src={Cart} alt="" />
+              </Button>
+
+              <Box className="btnOptions" mb={1.5}>
                 <Link
                   to={`/produtos/cadastrar/${produto.id_produto}`}
-                  className="text-decorator-none"
+                  className="text-decorator-none "
                 >
-                  <Box mx={1}>
-                    <Button variant="contained" className="btnAtualizar marginLeft" size="small">
-                      atualizar
-                    </Button>
+                  <Box mx={1} className="btnHover">
+                    <img className="btnHover" src={Edit} alt="" />
                   </Box>
                 </Link>
+
                 <Link
                   to={`/produtos/deletar/${produto.id_produto}`}
                   className="text-decorator-none"
                 >
-                  <Box mx={1}>
-                    <Button variant="contained" size="small" className="btnDeletar">
-                      deletar
-                    </Button>
+                  <Box mx={1} className="btnHover">
+                    <img className="btnHover" src={Delete} alt="" />
                   </Box>
                 </Link>
               </Box>
-
-
-              </CardActions>
-            </Card>
+            </CardActions>
+          </Card>
         ))}
       </Box>
     </>
