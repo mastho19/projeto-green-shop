@@ -16,6 +16,7 @@ import FadeMenu from "../../menuDrop/menuDrop";
 import { useDispatch, useSelector } from "react-redux";
 import { addToken } from "../../../store/tokens/action";
 import TokenState from "../../../store/tokens/tokenReducer";
+import ModalCarrinho from "../../carrinho/modalCarrinho";
 
 
 function Navbar() {
@@ -91,9 +92,8 @@ function Navbar() {
 
             <Box className="sacola">
               <div className="sacolaa">
-              <img src={Sacola} alt="" />
-              <div className="qtd">5</div>
-              </div>              
+              <ModalCarrinho/>              
+              </div>
             </Box>
 
           </Box>
