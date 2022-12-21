@@ -6,10 +6,11 @@ import {
   CardContent,
   CardMedia,
   Theme,
-  Typography,
+  Typography
 } from "@material-ui/core";
 import React, { useEffect, useState } from "react";
 import "./Produtos.css";
+import Mais from "./img/mais.png";
 import Dots from "./img/dots.svg";
 import Cart from "./img/cart.svg";
 import Edit from "./img/edit.svg";
@@ -19,10 +20,6 @@ import TokenState from "../../../store/tokens/tokenReducer";
 import { Link, useNavigate } from "react-router-dom";
 import { busca } from "../../../service/Service";
 import Produtos from "../../../model/Produto";
-import AddCircleIcon from '@mui/icons-material/AddCircle';
-import Modal from '../modal/Modal'
-import '.././modal/Modal.css';
-import { ClassNames } from "@emotion/react";
 
 function ListarProdutos() {
   const [produtos, setProdutos] = useState<Produtos[]>([]);
@@ -42,55 +39,58 @@ function ListarProdutos() {
     getProduto();
   }, [produtos.length]);
 
-  const [openModal, setOpenModal] = useState(false);
-
   return (
     <>
-      <div className="btn-cadastrar">
-        <Button onClick={() => setOpenModal(true)} className="modalButton">
-          <a className="cadastrar1">
-            <AddCircleIcon />
-          </a>
+    {/* BOTÃO PARA CADASTRAR PRODUTO */}
+      <Link to="/produtos/cadastrar" className="text-decorator-none">
+        <Button
+          variant="contained"
+          color="secondary"
+          className="btnAdicionarProduto"
+        >
+          <img src={Mais}/>
         </Button>
-        <Modal open={openModal} onClose={() => setOpenModal(false)} />
-      </div>
+      </Link>
+
+    {/* CARD PRODUTO */}
       <Box className="container">
         {produtos.map((produto) => (
-          <Card className="cardProduto">
-            <CardMedia
-              className="fotoCardProduto"
-              component="img"
-              width="100%"
-              image={produto.foto}
-              alt="foto produto"
-            />
-            <CardContent>
-              <Typography className="cardNome" variant="h5" component="div">
-                {produto.nome}
-                <strong className="cardPreco">R${produto.valor}</strong>
-              </Typography>
+            <Card className="cardProduto">
+              <CardMedia
+                className="fotoCardProduto"
+                component="img"
+                width="100%"
+                image={produto.foto}
+                alt="foto produto"
+              />
+              <CardContent>
+                <Typography className="cardNome" variant="h5" component="div">
+                  {produto.nome}
+                  <strong className="cardPreco">R${produto.valor}</strong>
+                </Typography>
 
-              {/*  <Typography className="cardCategoria">#{produto.categoria} </Typography> */}
+               {/*  <Typography className="cardCategoria">#{produto.categoria} </Typography> */}
 
-              <Typography className="cardDescricao">
-                {produto.descricao}
-              </Typography>
-            </CardContent>
-            <CardActions className="socialPerfil">
-              <Button size="small" className="btnComprar">
-                Comprar
-              </Button>
-              <Button size="small" className="btnCarrinho">
-                Adicionar <img src={Cart} alt="" />
-              </Button>
+                <Typography className="cardDescricao">
+                  {produto.descricao}
+                </Typography>
+              </CardContent>
+              <CardActions className="btnArea">
+                <Button size="small" className="btnComprar">
+                  Comprar
+                </Button>
+                <Button size="small" className="btnCarrinho">
+                  Adicionar <img src={Cart} alt="" />
+                </Button>
 
-              <Box className="btnOptions" mb={1.5}>
+                <Box className="btnOptions" mb={1.5}>
+
                 <Link
                   to={`/produtos/cadastrar/${produto.id_produto}`}
                   className="text-decorator-none "
                 >
                   <Box mx={1} className="btnHover">
-                    <img className="btnHover" src={Edit} alt="" />
+                      <img className="btnHover" src={Edit} alt="" />
                   </Box>
                 </Link>
 
@@ -103,8 +103,8 @@ function ListarProdutos() {
                   </Box>
                 </Link>
               </Box>
-            </CardActions>
-          </Card>
+              </CardActions>
+            </Card>
         ))}
       </Box>
     </>

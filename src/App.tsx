@@ -9,11 +9,13 @@ import Footer from './components/estaticos/footer/footer';
 import Cadastro from './paginas/cadastro/cadastro';
 import { Provider } from 'react-redux';
 import store from './store/store';
-import CadastrarProduto from './paginas/produtos/cadastrarProdutos/CadastrarProduto';
-import Produtos from './paginas/produtos/listarProdutos/Produtos';
 import ListaCategorias from './paginas/categorias/listaCategorias/listaCategorias';
 import DeletarCategoria from './paginas/categorias/deletarCategorias/deletarCategoria';
 import CadastroCategoria from './paginas/categorias/cadastrarCategorias/cadastrarCategoria';
+import DeletarProduto from './paginas/produtos/deletarProduto/DeletarProduto';
+import CadastrarProduto from './paginas/produtos/cadastrarProduto/CadastrarProduto';
+import ListarProdutos from './paginas/produtos/listaProdutos/Produtos';
+
 
 
 
@@ -28,11 +30,14 @@ function App() {
         <Navbar/>
         <Routes>
           <Route path='/home' element={<Home/>} />
+          <Route path='/' element={<Home/>} />
           <Route path='/login' element={<Login/>}/>
           <Route path='/sobre-nos' element={<SobreNos/>}/>
           <Route path='/cadastro' element={<Cadastro/>}/>
-          <Route path='/produtos/all' element={<Produtos/>}/>
-          <Route path='/cadastrar/produtos' element={<CadastrarProduto/>}/>
+          <Route path='/produtos/all' element={<ListarProdutos/>}/>
+          <Route path='/produtos/cadastrar' element={<CadastrarProduto/>}/>
+          <Route path='/produtos/cadastrar/:id' element={<CadastrarProduto/>}/>
+          <Route path='/produtos/deletar/:id' element={<DeletarProduto/>}/>
           <Route path='/categorias' element={<ListaCategorias/>}/>
           <Route path='/deletar/categoria/:id_categoria' element={<DeletarCategoria/>}/>
           <Route path="/cadastrar/categoria" element={<CadastroCategoria />} />

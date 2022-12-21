@@ -34,10 +34,10 @@ const Carrinho = () => {
 
     return (
         <>
-        <Typography variant='h3' align='center'>Carrinho de compras</Typography>
+        <Typography variant='h3' align='center'>Carrinho de Compras</Typography>
         
         {produtos.map((produto) => (
-            <Grid container >
+            <Grid container style={{padding:'25px'}} alignItems='center' >
               <Grid item sm={4}>
                 <img src={produto.foto} style={{width:'150px'}} />
               </Grid>
@@ -65,7 +65,7 @@ const Carrinho = () => {
         ))}
         <Grid container>
             <Grid item sm={8}>
-                <Button variant='contained'>Finalizar Compra</Button>
+                <Button variant='contained' style={{background:'#00A470', color:'#fff'}}>Finalizar Compra</Button>
             </Grid>
             <Grid item sm={4}>
                 <Typography>Valor Total:R$ {valorTotal}</Typography>

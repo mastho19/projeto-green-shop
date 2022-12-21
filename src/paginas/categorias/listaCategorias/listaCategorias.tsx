@@ -68,7 +68,7 @@ function ListaCategorias () {
               <Link to={`/atualizar/categoria/${categoria.id_categoria}`} className="text-decorator-none">
                 <Box mx={1}>
                 <Link to= {`/atualizar/categoria/${categoria.id_categoria}`} className="text-decorator-none cursor">
-                  <Button variant="contained" className="marginLeft" size='small' color="primary" >
+                  <Button variant="contained" className="btn-color" size='small' color="primary" >
                     atualizar
                   </Button>
                   </Link>

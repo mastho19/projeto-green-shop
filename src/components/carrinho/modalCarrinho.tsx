@@ -1,7 +1,6 @@
 import { Button, Modal } from "@material-ui/core";
 import { makeStyles, Theme, createStyles } from "@material-ui/core/styles";
-import React from "react";
-import Produto from "../../model/Produto";
+import React, { useState } from "react";
 import CloseIcon from "@material-ui/icons/Close";
 import { Box } from "@mui/material";
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
@@ -23,18 +22,20 @@ const useStyles = makeStyles((theme: Theme) =>
     paper: {
       position: "absolute",
       width: 600,
+      height: 450,
       backgroundColor: theme.palette.background.paper,
       border: "2px solid #000",
-      boxShadow: theme.shadows[5],
+      boxShadow: theme.shadows[1],
       padding: theme.spacing(2, 4, 3),
+      overflow:'scroll'
     },
   })
 );
 
 const ModalCarrinho = () => {
   const classes = useStyles();
-  const [modalStyle] = React.useState(getModalStyle);
-  const [open, setOpen] = React.useState(false);
+  const [modalStyle] = useState(getModalStyle);
+  const [open, setOpen] = useState(false);
 
   const handleOpen = () => {
     setOpen(true);
