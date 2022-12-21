@@ -15,6 +15,7 @@ import DeletarProduto from './paginas/produtos/deletarProduto/DeletarProduto';
 import CadastrarProduto from './paginas/produtos/cadastrarProduto/CadastrarProduto';
 import ListarProdutos from './paginas/produtos/listaProdutos/Produtos';
 import CadastroUsuario from './paginas/cadastro/cadastro';
+import Perfil from './paginas/perfil/Perfil';
 
 
 
@@ -42,6 +43,7 @@ function App() {
           <Route path='/deletar/categoria/:id_categoria' element={<DeletarCategoria/>}/>
           <Route path="/cadastrar/categoria" element={<CadastroCategoria />} />
           <Route path="/atualizar/categoria/:id_categoria" element={<CadastroCategoria />} />
+          <Route path="/perfil" element={<Perfil />} />
         </Routes>
         <Footer/> 
       </Router>

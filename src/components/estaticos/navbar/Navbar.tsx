@@ -80,11 +80,11 @@ function Navbar() {
                       <div className="conta2"><img src={require('../navbar/img/perfil.png')} width='29' height='29'/></div>
                     </Button>
                     <Menu {...bindMenu(popupState)}>
-                      <MenuItem onClick={popupState.close}>Perfil</MenuItem>
+                      <MenuItem onClick={popupState.close} ><Link to='/perfil' className='btn-link'>Perfil</Link></MenuItem>
                       <MenuItem onClick={popupState.close}>
                         Meus Pedidos
                       </MenuItem>
-                      <MenuItem onClick={popupState.close}><Link to='/login'>Login</Link></MenuItem>
+                      <MenuItem onClick={popupState.close} ><Link to='/login' className='btn-link'>Login</Link></MenuItem>
                     </Menu>
                   </React.Fragment>
                 )}
