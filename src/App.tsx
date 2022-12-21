@@ -6,7 +6,6 @@ import './App.css';
 import Navbar from './components/estaticos/navbar/Navbar';
 import Home from './paginas/home/Home';
 import Footer from './components/estaticos/footer/footer';
-import Cadastro from './paginas/cadastro/cadastro';
 import { Provider } from 'react-redux';
 import store from './store/store';
 import ListaCategorias from './paginas/categorias/listaCategorias/listaCategorias';
@@ -15,6 +14,7 @@ import CadastroCategoria from './paginas/categorias/cadastrarCategorias/cadastra
 import DeletarProduto from './paginas/produtos/deletarProduto/DeletarProduto';
 import CadastrarProduto from './paginas/produtos/cadastrarProduto/CadastrarProduto';
 import ListarProdutos from './paginas/produtos/listaProdutos/Produtos';
+import CadastroUsuario from './paginas/cadastro/cadastro';
 
 
 
@@ -33,7 +33,7 @@ function App() {
           <Route path='/' element={<Home/>} />
           <Route path='/login' element={<Login/>}/>
           <Route path='/sobre-nos' element={<SobreNos/>}/>
-          <Route path='/cadastro' element={<Cadastro/>}/>
+          <Route path='/cadastro' element={<CadastroUsuario/>}/>
           <Route path='/produtos/all' element={<ListarProdutos/>}/>
           <Route path='/produtos/cadastrar' element={<CadastrarProduto/>}/>
           <Route path='/produtos/cadastrar/:id' element={<CadastrarProduto/>}/>

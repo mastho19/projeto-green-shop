@@ -1,100 +1,82 @@
 import { Button, Grid, TextField, Typography } from "@material-ui/core";
 import { Box } from "@mui/material";
 import React, { ChangeEvent, useState, useEffect } from "react";
-import { useDispatch } from 'react-redux'
-import { Link, useNavigate } from "react-router-dom";
-import UserLogin from "../../model/userLogin"
-import { login } from '../../service/Service'
-import { addToken } from "../../store/tokens/action";
+import { Link, useNavigate } from 'react-router-dom';
+import UserLogin from "../../model/userLogin";
 import "./login.css";
+import LoginBg from "./img/loginbg.png";
+import { login } from "../../service/Service";
+import { useDispatch } from "react-redux";
+import { addToken } from "../../store/tokens/action";
+import { toast } from "react-toastify";
 
 function Login() {
 
-
-
-  const dispacht = useDispatch() 
-  const [token, setToken ] = useState("")
-
-
-  const [usuario] = useState<String>('')
-  const [erroUsuario, setErroUsuario] = useState<String>('')
-
-
-  const [senha] = useState<String>('')
-  const [erroSenha, setErroSenha] = useState<String>('')
-
-
-  let navigate = useNavigate();
- 
-  const [userLogin, setUserLogin] = useState<UserLogin>(
-    {
-      
-      usuario: '',
-      senha: '',
-      
-    }
-  )
- 
-
-  async function onSubmit(e: ChangeEvent<HTMLFormElement>) {
-    e.preventDefault()
-
-    
-
-    if (userLogin.usuario.length < 3) {
-      setErroUsuario('erro')
-    }else{
-      setErroUsuario('')
-    }
-    
-    console.log(usuario.length)
-
-    if (userLogin.senha.length < 5) {
-      setErroSenha('erro')
-    }else{
-      setErroSenha('')
-    }
-
-    console.log(senha.length)
- 
-
-
-
-    try{
-      await login(`/auth/logar`, userLogin, setToken)
   
-        alert('Usuário logado com sucesso!');
-    }catch(error){
-        alert('Dados do usuário inconsistentes. Erro ao logar!');
-    }
+  let navigate = useNavigate();
+  const [token, setToken] = useState('');
+  const dispatch = useDispatch();
+  const [userLogin, setUserLogin] = useState<UserLogin>(
+      {
+        usuario: '',
+        senha: ''
+      }
+      )
+      function updatedModel(e: ChangeEvent<HTMLInputElement>) {
 
+          setUserLogin({
+              ...userLogin,
+              [e.target.name]: e.target.value
+          })
+      }
 
-  }
+          useEffect(()=>{
+              if(token != ''){
+                  dispatch(addToken(token));
+                  navigate('/home')
+              }
+          }, [token])
 
+      async function onSubmit(e: ChangeEvent<HTMLFormElement>){
+          e.preventDefault();
+          try{
+              await login(`/auth/logar`, userLogin, setToken)
+              toast.success('Usuario Logado!', {
+                position: "top-center",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: true,
+                progress: undefined,
+                theme: "dark",
+                });
+          }catch(error){
+            toast.error('Verifique as Informações!', {
+              position: "top-center",
+              autoClose: 3000,
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: false,
+              draggable: true,
+              progress: undefined,
+              theme: "dark",
+              });
+          }
+      }
 
-  function updatedModel(e: ChangeEvent<HTMLInputElement>) {
-
-    setUserLogin({
-      ...userLogin,
-      [e.target.name]: e.target.value
-    })
-  }
-
-  useEffect(()=>{
-    if(token !=''){
-        dispacht(addToken(token)) 
-        navigate('/home')
-    }
-},[token])
-
+  
   return (
     <>
       <Grid container justifyContent="center" alignContent="center" className="fullScreen">
+        <Grid sm={6} item className="loginStyle2">
+          <img src={LoginBg} alt="Imagem de Login" />
+        </Grid>
         <Grid sm={6} item className="loginStyle">
           <Typography variant="h3" align="center">Entrar</Typography>
           <form onSubmit={onSubmit}>
-            <TextField
 
+            <TextField
               variant="outlined"
               label="Usuário"
               fullWidth
@@ -102,11 +84,10 @@ function Login() {
               id="usuario"
               name='usuario'
               value={userLogin.usuario}
-              onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
-            >
-
+              onChange={(e:ChangeEvent<HTMLInputElement>) => updatedModel(e)}
+             >
             </TextField>
-            <Box className=" text-red" id="erroUsuario">{erroUsuario}</Box>
+          
             <TextField
 
               variant="outlined"
@@ -116,23 +97,20 @@ function Login() {
               id="Senha"
               name='senha'
               type='password'
-              value={userLogin.senha}
-              onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
+              onChange={(e:ChangeEvent<HTMLInputElement>) => updatedModel(e)}
+
             >
-
             </TextField>
-            <Box className=" text-red" id="erroSenha">{erroSenha}</Box>
-
 
             <Box textAlign="center">
-
-              <Button variant="outlined" type="submit">Enviar</Button>
+              <Button variant="contained" type="submit" className="btnLogin">Login</Button>
             </Box>
+            <div className="ou"><span className="tracinho"></span>OU<span className="tracinho"></span></div>
           </form>
           <Box className="flex">
-            <Typography>Não tem cadastro ?</Typography>
+            <Typography>Não tem cadastro?</Typography>
             <Link to='/cadastro' className="linkStyle">
-              <Typography>Cadastre-se !</Typography>
+              <Typography>Cadastre-se</Typography>
             </Link>
           </Box>
         </Grid>
