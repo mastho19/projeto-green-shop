@@ -27,11 +27,11 @@ function Navbar() {
   const token= useSelector<TokenState, TokenState["tokens"]>(
     (state)=> state.tokens
   )
-  const dispacht= useDispatch()
+  const dispatch= useDispatch()
 
 
-  function goLogaut(){
-      dispacht(addToken(''));
+  function goLogout(){
+      dispatch(addToken(''));
       navigate('/login')
   }
 
@@ -84,7 +84,7 @@ function Navbar() {
                       <MenuItem onClick={popupState.close}>
                         Meus Pedidos
                       </MenuItem>
-                      <MenuItem onClick={popupState.close}>Logout</MenuItem>
+                      <MenuItem onClick={popupState.close}><Link to='/login'>Login</Link></MenuItem>
                     </Menu>
                   </React.Fragment>
                 )}
