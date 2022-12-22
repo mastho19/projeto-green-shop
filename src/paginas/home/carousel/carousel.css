@@ -23,7 +23,7 @@
     font-size: 16px;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     color: #18181D;
-    background-color: coral;
+    background-color: #9dd2c1;
     font-size: 25px;
 }
 .price{
@@ -44,7 +44,7 @@
 .btn-custom{
     cursor: pointer;
     text-align: center;
-    background-color: #b9ab11;
+    background-color: #00a470;
     font-size: 14px;
     font-weight: 600;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -62,14 +62,10 @@
 }
 .btn .second{
     background-color: #fff;
-    color: #b9ab11;
+    color: #00a470;
     text-decoration: none
 }
-.btn .second:hover{
-    background-color: grey;
-    color: white;
-    text-decoration: none
-}
+
 
 @media screen and (max-width: 669px){
 

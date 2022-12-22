@@ -5,7 +5,7 @@
     box-sizing: border-box;
   }
 
-.containerSN{
+.containerSN2{
     display: flex;
     background-color: #111;
     color: white !important;
@@ -28,41 +28,56 @@
     margin: 0px 0px 0px 100px;
 
 }
-.boxPerfil{
+.boxPerfil1{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
 }
-.imagem-sobreNos {
+.imagem-sobreNos2 {
     display: flex;
     margin: 0px 0px 0px 40px;
     width: 560px;
     height: auto;
 }
-.imagem-sobreNos:hover {
+.imagem-sobreNos2:hover {
     transform: scale(1.10);
     transition: 0.5s all ease-in-out;
 }
-.card2{
+.card4{
     margin: 30px 20px;
-    width: 200px;
-    height: 250px;
-}
-.socialPerfil{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    width: 250px;
+    height: 400px;
 }
 
-.card:hover{
+.fotoCard2 {
+    height: 250px;
+    padding: 10px 10px 0px 10px;
+    border-top-left-radius: 13px !important;
+    border-top-right-radius: 13px !important;
+
+}
+
+.margem-Nome {
+    margin-top: 0px !important;
+}
+
+.bordaCard2{
+    overflow: hidden;
+    width: 230px;
+    height: 139px;
+    margin-left: 10px;
+    background-color: rgb(206, 236, 209);
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+.card4:hover{
     transform: scale(1.03);
     transition: 0.5s all ease-in-out;
 }
 .logo-redes{
     display: inline;
-    padding: 10px;
-
-
+    padding: 13px;
 }
 
 .cor-logo{
@@ -81,20 +96,22 @@
     text-transform: uppercase;
     font-weight: bold;
 }
-.ul-cards {
+.ul-cards2 {
     display: flex;
     flex-wrap: wrap;
     list-style-type: none;
     justify-content: center;
-    margin: 0px 270px 0px 270px;
+    align-items: center;
+    margin: 0px 270px;
 }
-.li-cards {
+.li-cards2 {
     text-align: center;
     
 }
-.card-body {
-    background: #c0ddc3 !important;
-    box-shadow: 2px 2px 6px 0px rgba(50, 50, 50, 0.22);
+.card-body2 {
+    border-radius: 13px !important;
+    background: #ffffff !important;
+    box-shadow: 4px 4px 8px 0px rgba(50, 50, 50, 0.22) !important;
 }
 
 .card-body:hover {

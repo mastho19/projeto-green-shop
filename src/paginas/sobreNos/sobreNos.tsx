@@ -3,7 +3,12 @@ import { Box } from "@mui/material";
 import React from "react";
 import "./sobreNos.css";
 
-import FotoPerfil from "./img/perfil.jpg";
+import Ronaldo from "./img/Ronaldo.png";
+import Raquel from "./img/Raquel.png";
+import Thomas from "./img/Thomas.png";
+import Ivan from "./img/Ivan.png";
+import Rejane from "./img/Rejane.png";
+import Rodrigo from "./img/Rodrigo.png";
 import Linkedin from "./img/linkedin-card.svg"
 import Github from "./img/github-card.svg"
 
@@ -17,7 +22,7 @@ function SobreNos() {
 
   return (
     <>
-      <Grid container className="containerSN">
+      <Grid container className="containerSN2">
         <Grid item sm={6}>
           <div className="margin-text">
             <Typography variant="h3" className="sobreProjeto">sobre o projeto</Typography>
@@ -31,7 +36,7 @@ function SobreNos() {
           <img
             src="https://reciclaje.com.co/wp-content/uploads/2018/03/Destacada-reciclador-asociado.jpg"
             alt="imagem1"
-            className="imagem-sobreNos"
+            className="imagem-sobreNos2"
           />
         </Grid>
       </Grid>
@@ -41,139 +46,154 @@ function SobreNos() {
       </Box>
 
       <section>
-        <ul className="ul-cards">
-          <li className="li-cards">
-            <Box className="boxPerfil">
+        <ul className="ul-cards2">
+            <li className="li-cards2">
+              <Box className="boxPerfil1">
 
-              <Card sx={{ maxWidth: 345 }} className="card2 card-body">
-                <CardMedia className="fotoCard" component="img" width="100%" image={FotoPerfil} alt="perfil" />
-                <CardContent>
-                  <Typography variant="h5" component="div">Ronaldo</Typography>
-                </CardContent>
-                <ul>
-                  <li className="logo-redes">
-                    <Link rel="stylesheet" href="https://www.github.com" target="_blank" ><img src={Github} width='35px' alt="Logo Github" /></Link>
-                  </li>
-                  <li className="logo-redes">
-                    <Link rel="stylesheet" href="https://www.linkedin.com" target="_blank" ><img src={Linkedin} width='35px' alt="Logo Linkedin" /></Link>
-                  </li>
-                </ul>
-              </Card>
-            </Box>
-          </li>
-          <li className="li-cards">
-            <Box className="boxPerfil">
+                <Card sx={{ maxWidth: 345 }} className="card4 card-body2">
+                  <CardMedia className="fotoCard2" component="img" width="100%" image={Thomas} alt="perfil" />
+                  <div className="bordaCard2">
+                  <CardContent>
+                    <Typography variant="h5" component="div">Thomás Almeida</Typography>
+                  </CardContent>
+                  <ul>
+                    <li className="logo-redes">
+                      <Link rel="stylesheet" href="https://github.com/mastho19" target="_blank" ><img src={Github} width='35px' alt="Logo Github" /></Link>
+                    </li>
+                    <li className="logo-redes">
+                      <Link rel="stylesheet" href="https://www.linkedin.com/in/thomas-almeida-de-sousa/" target="_blank" ><img src={Linkedin} width='35px' alt="Logo Linkedin" /></Link>
+                    </li>
+                  </ul>
+                  </div>
+                </Card>
+              </Box>
+            </li>
+            <li className="li-cards2">
+              <Box className="boxPerfil1">
 
-              <Card sx={{ maxWidth: 345 }} className="card2 card-body">
-                <CardMedia className="fotoCard" component="img" width="100%" image={FotoPerfil} alt="perfil" />
-                <CardContent>
-                  <Typography variant="h5" component="div">Rodrigo</Typography>
-                </CardContent>
-                <ul>
-                  <li className="logo-redes">
-                    <Link rel="stylesheet" href="https://www.github.com" target="_blank" ><img src={Github} width='35px' alt="Logo Github" /></Link>
-                  </li>
-                  <li className="logo-redes">
-                    <Link rel="stylesheet" href="https://www.linkedin.com" target="_blank" ><img src={Linkedin} width='35px' alt="Logo Linkedin" /></Link>
-                  </li>
-                </ul>
-              </Card>
-            </Box>
-          </li>
-          <li className="li-cards">
-            <Box className="boxPerfil">
+                <Card sx={{ maxWidth: 345 }} className="card4 card-body2">
+                  <CardMedia className="fotoCard2" component="img" width="100%" image={Raquel} alt="perfil" />
+                  <div className="bordaCard2">
+                  <CardContent>
+                    <Typography variant="h5" component="div">Raquel Resende</Typography>
+                  </CardContent>
+                  <ul>
+                    <li className="logo-redes">
+                      <Link rel="stylesheet" href="https://github.com/RaquelResende" target="_blank" ><img src={Github} width='35px' alt="Logo Github" /></Link>
+                    </li>
+                    <li className="logo-redes">
+                      <Link rel="stylesheet" href="https://www.linkedin.com/in/raquelpintoresende/" target="_blank" ><img src={Linkedin} width='35px' alt="Logo Linkedin" /></Link>
+                    </li>
+                  </ul>
+                  </div>
+                </Card>
+              </Box>
+            </li>
+            <li className="li-cards2">
+              <Box className="boxPerfil1">
 
-              <Card sx={{ maxWidth: 345 }} className="card2 card-body">
-                <CardMedia className="fotoCard" component="img" width="100%" image={FotoPerfil} alt="perfil" />
-                <CardContent>
-                  <Typography variant="h5" component="div">Raquel</Typography>
-                </CardContent>
-                <ul>
-                  <li className="logo-redes">
-                    <Link rel="stylesheet" href="https://www.github.com" target="_blank" ><img src={Github} width='35px' alt="Logo Github" /></Link>
-                  </li>
-                  <li className="logo-redes">
-                    <Link rel="stylesheet" href="https://www.linkedin.com" target="_blank" ><img src={Linkedin} width='35px' alt="Logo Linkedin" /></Link>
-                  </li>
-                </ul>
-              </Card>
-            </Box>
-          </li>
-          <li className="li-cards">
-            <Box className="boxPerfil">
-              <Card sx={{ maxWidth: 345 }} className="card2 card-body">
-                <CardMedia className="fotoCard" component="img" width="100%" image={FotoPerfil} alt="perfil" />
-                <CardContent>
-                  <Typography variant="h5" component="div">Thomas</Typography>
-                </CardContent>
-                <ul>
-                  <li className="logo-redes">
-                    <Link rel="stylesheet" href="https://www.github.com" target="_blank" ><img src={Github} width='35px' alt="Logo Github" /></Link>
-                  </li>
-                  <li className="logo-redes">
-                    <Link rel="stylesheet" href="https://www.linkedin.com" target="_blank" ><img src={Linkedin} width='35px' alt="Logo Linkedin" /></Link>
-                  </li>
-                </ul>
-              </Card>
-            </Box>
-          </li>
-          <li className="li-cards">
-            <Box className="boxPerfil">
+                <Card sx={{ maxWidth: 345 }} className="card4 card-body2">
+                  <CardMedia className="fotoCard2" component="img" width="100%" image={Rodrigo} alt="perfil" />
+                  <div className="bordaCard2">
+                  <CardContent>
+                    <Typography variant="h5" component="div">Rodrigo Daniel</Typography>
+                  </CardContent>
+                  <ul>
+                    <li className="logo-redes">
+                      <Link rel="stylesheet" href="https://github.com/Spyke27" target="_blank" ><img src={Github} width='35px' alt="Logo Github" /></Link>
+                    </li>
+                    <li className="logo-redes">
+                      <Link rel="stylesheet" href="https://www.linkedin.com/in/rodrigo-daniell/" target="_blank" ><img src={Linkedin} width='35px' alt="Logo Linkedin" /></Link>
+                    </li>
+                  </ul>
+                  </div>
+                </Card>
+              </Box>
+            </li>
+            <li className="li-cards2">
+              <Box className="boxPerfil1">
 
-              <Card sx={{ maxWidth: 345 }} className="card2 card-body">
-                <CardMedia className="fotoCard" component="img" width="100%" image={FotoPerfil} alt="perfil" />
-                <CardContent>
-                  <Typography variant="h5" component="div">Rejane</Typography>
-                </CardContent>
-                <ul>
-                  <li className="logo-redes">
-                    <Link rel="stylesheet" href="https://www.github.com" target="_blank" ><img src={Github} width='35px' alt="Logo Github" /></Link>
-                  </li>
-                  <li className="logo-redes">
-                    <Link rel="stylesheet" href="https://www.linkedin.com" target="_blank" ><img src={Linkedin} width='35px' alt="Logo Linkedin" /></Link>
-                  </li>
-                </ul>
-              </Card>
-            </Box>
-          </li>
-          <li className="li-cards">
-            <Box className="boxPerfil">
+                <Card sx={{ maxWidth: 345 }} className="card4 card-body2">
+                  <CardMedia className="fotoCard2" component="img" width="100%" image={Ronaldo} alt="perfil" />
+                  <div className="bordaCard2">
+                  <CardContent>
+                    <Typography variant="h5" component="div">Ronaldo Freire</Typography>
+                  </CardContent>
+                  <ul>
+                    <li className="logo-redes">
+                      <Link rel="stylesheet" href="https://github.com/Ronald0Freire" target="_blank" ><img src={Github} width='35px' alt="Logo Github" /></Link>
+                    </li>
+                    <li className="logo-redes">
+                      <Link rel="stylesheet" href="https://www.linkedin.com/in/ronaldo-freire/" target="_blank" ><img src={Linkedin} width='35px' alt="Logo Linkedin" /></Link>
+                    </li>
+                  </ul>
+                  </div>
+                </Card>
+              </Box>
+            </li>
+            <li className="li-cards2">
+              <Box className="boxPerfil1">
 
-              <Card sx={{ maxWidth: 345 }} className="card2 card-body">
-                <CardMedia className="fotoCard" component="img" width="100%" image={FotoPerfil} alt="perfil" />
-                <CardContent>
-                  <Typography variant="h5" component="div">Lucas</Typography>
-                </CardContent>
-                <ul>
-                  <li className="logo-redes">
-                    <Link rel="stylesheet" href="https://www.github.com" target="_blank" ><img src={Github} width='35px' alt="Logo Github" /></Link>
-                  </li>
-                  <li className="logo-redes">
-                    <Link rel="stylesheet" href="https://www.linkedin.com" target="_blank" ><img src={Linkedin} width='35px' alt="Logo Linkedin" /></Link>
-                  </li>
-                </ul>
-              </Card>
-            </Box>
-          </li>
-          <li className="li-cards">
-            <Box className="boxPerfil">
+                <Card sx={{ maxWidth: 345 }} className="card4 card-body2">
+                  <CardMedia className="fotoCard2" component="img" width="100%" image={Ronaldo} alt="perfil" />
+                  <div className="bordaCard2">
+                  <CardContent>
+                    <Typography variant="h5" component="div">Lucas El Honais</Typography>
+                  </CardContent>
+                  <ul>
+                    <li className="logo-redes">
+                      <Link rel="stylesheet" href="https://github.com/LucasMarques97" target="_blank" ><img src={Github} width='35px' alt="Logo Github" /></Link>
+                    </li>
+                    <li className="logo-redes">
+                      <Link rel="stylesheet" href="https://www.linkedin.com" target="_blank" ><img src={Linkedin} width='35px' alt="Logo Linkedin" /></Link>
+                    </li>
+                  </ul>
+                  </div>
+                </Card>
+              </Box>
+            </li>
+            <li className="li-cards2">
+              <Box className="boxPerfil1">
 
-              <Card sx={{ maxWidth: 345 }} className="card2 card-body">
-                <CardMedia className="fotoCard" component="img" width="100%" image={FotoPerfil} alt="perfil" />
-                <CardContent>
-                  <Typography variant="h5" component="div">Ivan</Typography>
-                </CardContent>
-                <ul>
-                  <li className="logo-redes">
-                    <Link rel="stylesheet" href="https://www.github.com" target="_blank" ><img src={Github} width='35px' alt="Logo Github" /></Link>
-                  </li>
-                  <li className="logo-redes">
-                    <Link rel="stylesheet" href="https://www.linkedin.com" target="_blank" ><img src={Linkedin} width='35px' alt="Logo Linkedin" /></Link>
-                  </li>
-                </ul>
-              </Card>
-            </Box>
-          </li>
+                <Card sx={{ maxWidth: 345 }} className="card4 card-body2">
+                  <CardMedia className="fotoCard2" component="img" width="100%" image={Ivan} alt="perfil" />
+                  <div className="bordaCard2">
+                  <CardContent>
+                    <Typography variant="h5" component="div">José Ivanilson</Typography>
+                  </CardContent>
+                  <ul>
+                    <li className="logo-redes">
+                      <Link rel="stylesheet" href="https://github.com/ivanilsonsillva" target="_blank" ><img src={Github} width='35px' alt="Logo Github" /></Link>
+                    </li>
+                    <li className="logo-redes">
+                      <Link rel="stylesheet" href="https://www.linkedin.com/in/ivanilson-sillva/" target="_blank" ><img src={Linkedin} width='35px' alt="Logo Linkedin" /></Link>
+                    </li>
+                  </ul>
+                  </div>
+                </Card>
+              </Box>
+            </li>
+            <li className="li-cards2">
+              <Box className="boxPerfil1">
+
+                <Card sx={{ maxWidth: 345 }} className="card4 card-body2">
+                  <CardMedia className="fotoCard2" component="img" width="100%" image={Rejane} alt="perfil" />
+                  <div className="bordaCard2">
+                  <CardContent>
+                    <Typography variant="h5" component="div">Rejane Queiroz</Typography>
+                  </CardContent>
+                  <ul>
+                    <li className="logo-redes">
+                      <Link rel="stylesheet" href="https://github.com/rejanequeiroz" target="_blank" ><img src={Github} width='35px' alt="Logo Github" /></Link>
+                    </li>
+                    <li className="logo-redes">
+                      <Link rel="stylesheet" href="https://www.linkedin.com/in/reijane-queiroz/" target="_blank" ><img src={Linkedin} width='35px' alt="Logo Linkedin" /></Link>
+                    </li>
+                  </ul>
+                  </div>
+                </Card>
+              </Box>
+            </li>
         </ul>
       </section>
     </>

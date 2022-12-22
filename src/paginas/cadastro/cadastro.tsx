@@ -1,6 +1,5 @@
 import React, { useState, useEffect, ChangeEvent } from "react";
 import { useNavigate } from "react-router-dom";
-import UserCadastro from "../../model/User";
 import { cadastroUsuario } from "../../service/Service";
 import { Grid, Typography, Button, TextField } from "@material-ui/core";
 import { Box } from "@mui/material";
@@ -8,12 +7,13 @@ import { Link } from "react-router-dom";
 import "./cadastro.css";
 import { toast } from "react-toastify";
 import CadastroBg from "./img/cadastrobg.png";
+import User from "../../model/User";
 
 function CadastroUsuario() {
   
   let navigate = useNavigate();
   const [confirmarSenha, setConfirmarSenha] = useState<String>("");
-  const [user, setUser] = useState<UserCadastro>({
+  const [user, setUser] = useState<User>({
     id_usuario: 0,
     usuario: "",
     nome: "",
@@ -21,7 +21,7 @@ function CadastroUsuario() {
     foto: "",
   });
 
-  const [userResult, setUserResult] = useState<UserCadastro>({
+  const [userResult, setUserResult] = useState<User>({
     id_usuario: 0,
     usuario: "",
     nome: "",
@@ -149,14 +149,12 @@ function CadastroUsuario() {
               <Button variant="outlined" className="btnCancelar">
                   Cancelar
               </Button>
-              <Link to="/login" className="text-decorator-none">
               <Button type="submit" variant="contained" className="btn-cadastrar">
                 Cadastrar
               </Button>
-              </Link>
               <div className="ou"><span className="tracinho"></span>OU<span className="tracinho"></span></div>
           <Box className="flex">
-            <Typography>JÃ¡ tem cadastro?</Typography>
+            <Typography>Já tem cadastro?</Typography>
             <Link to='/login' className="linkStyle">
               <Typography>Entrar</Typography>
             </Link>

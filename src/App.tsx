@@ -16,6 +16,8 @@ import CadastrarProduto from './paginas/produtos/cadastrarProduto/CadastrarProdu
 import ListarProdutos from './paginas/produtos/listaProdutos/Produtos';
 import CadastroUsuario from './paginas/cadastro/cadastro';
 import Perfil from './paginas/perfil/Perfil';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 
@@ -27,6 +29,7 @@ function App() {
   return (
     <>
     <Provider store={store}>
+    <ToastContainer />
       <Router>
         <Navbar/>
         <Routes>

@@ -170,7 +170,7 @@ function CadastroProduto() {
     }
   }
   function back() {
-    navigate("/produtos");
+    navigate("/produtos/all");
   }
 
   return (

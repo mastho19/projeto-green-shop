@@ -83,7 +83,7 @@ function ListarProdutos() {
                   Adicionar <img src={Cart} alt="" />
                 </Button>
 
-                <Box className="btnOptions" mb={1.5}>
+                <Box className="btnOptions1" mb={1.5}>
 
                 <Link
                   to={`/produtos/cadastrar/${produto.id_produto}`}
