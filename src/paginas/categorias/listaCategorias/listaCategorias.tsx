@@ -8,6 +8,7 @@ import TokenState from '../../../store/tokens/tokenReducer';
 import { useSelector } from 'react-redux';
 import { busca } from '../../../service/Service';
 import AddCircleIcon from '@mui/icons-material/AddCircle';
+import { toast } from 'react-toastify';
 
 
 
@@ -20,7 +21,16 @@ function ListaCategorias () {
   )
   useEffect(()=>{
     if(token == ''){
-      alert("VocÃª precisa estar logado")
+      toast.error('Verifique as Informações!', {
+        position: "top-center",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+        });
       navigate("/login")
     }
   }, [token])

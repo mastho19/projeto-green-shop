@@ -6,6 +6,7 @@ import "./sobreNos.css";
 import Ronaldo from "./img/Ronaldo.png";
 import Raquel from "./img/Raquel.png";
 import Thomas from "./img/Thomas.png";
+import Lucas from "./img/Lucas.png";
 import Ivan from "./img/Ivan.png";
 import Rejane from "./img/Rejane.png";
 import Rodrigo from "./img/Rodrigo.png";
@@ -36,7 +37,7 @@ function SobreNos() {
           <img
             src="https://reciclaje.com.co/wp-content/uploads/2018/03/Destacada-reciclador-asociado.jpg"
             alt="imagem1"
-            className="imagem-sobreNos2"
+            className="imagem-sobreNos"
           />
         </Grid>
       </Grid>
@@ -48,11 +49,11 @@ function SobreNos() {
       <section>
         <ul className="ul-cards2">
             <li className="li-cards2">
-              <Box className="boxPerfil1">
+              <Box className="boxPerfil2">
 
-                <Card sx={{ maxWidth: 345 }} className="card4 card-body2">
+                <Card sx={{ maxWidth: 345 }} className="card3 card-body2">
                   <CardMedia className="fotoCard2" component="img" width="100%" image={Thomas} alt="perfil" />
-                  <div className="bordaCard2">
+                  <div className="bordaCard">
                   <CardContent>
                     <Typography variant="h5" component="div">Thomás Almeida</Typography>
                   </CardContent>
@@ -69,11 +70,11 @@ function SobreNos() {
               </Box>
             </li>
             <li className="li-cards2">
-              <Box className="boxPerfil1">
+              <Box className="boxPerfil2">
 
-                <Card sx={{ maxWidth: 345 }} className="card4 card-body2">
+                <Card sx={{ maxWidth: 345 }} className="card3 card-body2">
                   <CardMedia className="fotoCard2" component="img" width="100%" image={Raquel} alt="perfil" />
-                  <div className="bordaCard2">
+                  <div className="bordaCard">
                   <CardContent>
                     <Typography variant="h5" component="div">Raquel Resende</Typography>
                   </CardContent>
@@ -90,13 +91,13 @@ function SobreNos() {
               </Box>
             </li>
             <li className="li-cards2">
-              <Box className="boxPerfil1">
+              <Box className="boxPerfil2">
 
-                <Card sx={{ maxWidth: 345 }} className="card4 card-body2">
+                <Card sx={{ maxWidth: 345 }} className="card3 card-body2">
                   <CardMedia className="fotoCard2" component="img" width="100%" image={Rodrigo} alt="perfil" />
-                  <div className="bordaCard2">
+                  <div className="bordaCard">
                   <CardContent>
-                    <Typography variant="h5" component="div">Rodrigo Daniel</Typography>
+                    <Typography variant="h5" component="div">Rodrigo Eufrasio</Typography>
                   </CardContent>
                   <ul>
                     <li className="logo-redes">
@@ -111,11 +112,11 @@ function SobreNos() {
               </Box>
             </li>
             <li className="li-cards2">
-              <Box className="boxPerfil1">
+              <Box className="boxPerfil2">
 
-                <Card sx={{ maxWidth: 345 }} className="card4 card-body2">
+                <Card sx={{ maxWidth: 345 }} className="card3 card-body2">
                   <CardMedia className="fotoCard2" component="img" width="100%" image={Ronaldo} alt="perfil" />
-                  <div className="bordaCard2">
+                  <div className="bordaCard">
                   <CardContent>
                     <Typography variant="h5" component="div">Ronaldo Freire</Typography>
                   </CardContent>
@@ -132,11 +133,11 @@ function SobreNos() {
               </Box>
             </li>
             <li className="li-cards2">
-              <Box className="boxPerfil1">
+              <Box className="boxPerfil2">
 
-                <Card sx={{ maxWidth: 345 }} className="card4 card-body2">
-                  <CardMedia className="fotoCard2" component="img" width="100%" image={Ronaldo} alt="perfil" />
-                  <div className="bordaCard2">
+                <Card sx={{ maxWidth: 345 }} className="card3 card-body2">
+                  <CardMedia className="fotoCard2" component="img" width="100%" image={Lucas} alt="perfil" />
+                  <div className="bordaCard">
                   <CardContent>
                     <Typography variant="h5" component="div">Lucas El Honais</Typography>
                   </CardContent>
@@ -153,11 +154,11 @@ function SobreNos() {
               </Box>
             </li>
             <li className="li-cards2">
-              <Box className="boxPerfil1">
+              <Box className="boxPerfil2">
 
-                <Card sx={{ maxWidth: 345 }} className="card4 card-body2">
+                <Card sx={{ maxWidth: 345 }} className="card3 card-body2">
                   <CardMedia className="fotoCard2" component="img" width="100%" image={Ivan} alt="perfil" />
-                  <div className="bordaCard2">
+                  <div className="bordaCard">
                   <CardContent>
                     <Typography variant="h5" component="div">José Ivanilson</Typography>
                   </CardContent>
@@ -174,11 +175,11 @@ function SobreNos() {
               </Box>
             </li>
             <li className="li-cards2">
-              <Box className="boxPerfil1">
+              <Box className="boxPerfil2">
 
-                <Card sx={{ maxWidth: 345 }} className="card4 card-body2">
+                <Card sx={{ maxWidth: 345 }} className="card3 card-body2">
                   <CardMedia className="fotoCard2" component="img" width="100%" image={Rejane} alt="perfil" />
-                  <div className="bordaCard2">
+                  <div className="bordaCard">
                   <CardContent>
                     <Typography variant="h5" component="div">Rejane Queiroz</Typography>
                   </CardContent>
