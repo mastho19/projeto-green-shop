@@ -73,7 +73,7 @@
     height: 35px !important;
     border-radius: 3px;
     cursor: pointer;
-    margin-left: 0px;
+    margin-left: 10px;
 }
 
 .sacola img {
@@ -98,7 +98,6 @@
 /* subMenu inicio */
 .bar2 {
     background-color: #00A470;
-
     min-height: 30px !important;
     display: flex;
     justify-content: center;
@@ -233,7 +232,7 @@
     transition-delay: 0.75s;
 }
 
-/* //////////////////////////////////////////////////////////////////// */
+
 .barrinha {
     position: relative;
     color: #00A470;
@@ -299,7 +298,7 @@
     }
 }
 
-/* ////////////////////////////////////////////////////////////////// */
+
 @media (max-width: 1600px){
     .text-logo {
         margin-left: 40px !important;

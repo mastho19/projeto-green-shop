@@ -3,7 +3,7 @@
   height: 480px;
   width: 100%;
   max-width: 1200px;
-  margin-top: 10px;
+  margin-top: 80px;
 }
 
 .carousel_wrapper {
@@ -61,7 +61,9 @@
 }
 
 .card_title {
-  color: rgb(255, 255, 255);
+  color:rgb(246, 243, 243);
+  background-color: rgba(128, 128, 128, 0.1);
+  border-radius: 10px;
   font-size: 30px;
 }
 
@@ -94,15 +96,15 @@
   width: 57px;
   height: 55px;
   padding-bottom: 25px;
-  color:yellowgreen;
-  background-color: cadetblue;
+  color: #e3e3e3;;
+  background-color: #00A470;
 }
 .carousel_arrow_right:hover {
   width: 57px;
   height: 55px;
   padding-bottom: 25px;
-  color:yellowgreen;
-  background-color: cadetblue;
+  color:#e3e3e3;
+  background-color: #00A470;
 }
 
 .carousel_pagination {
