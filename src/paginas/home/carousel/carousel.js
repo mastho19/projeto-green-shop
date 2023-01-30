@@ -101,19 +101,21 @@ const ProductCard = () => {
 
             <div className='product-thumb'>
 
-              <a href='#'><img src={"https://asenhoradomonte.com/wp-content/uploads/2013/03/rolhas-1.jpg"}></img></a>
+              <a href='#'><img src={"https://meioambiente.culturamix.com/blog/wp-content/gallery/exemplos-de-produtos-reciclaveis-no-cotidiano-1/exemplos-de-produtos-reciclaveis-no-cotidiano-1-3.jpg"}></img></a>
 
             </div>
 
             <div className='title'>
 
-                <h6>Curtininha abriu, olhou!</h6>
+                <h6>
+                Lorem ipsum dolor
+                </h6>
 
             </div>
 
             <div className='price'>
 
-              <span>Não compre, sem Privacidade</span>
+              <span> Lorem ipsum dolor  </span>
 
             </div>
 
@@ -138,19 +140,19 @@ const ProductCard = () => {
 
             <div className='product-thumb'>
 
-              <a href='#'><img src={"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQRnVf5QP575QWo6Ig6ur6_7UwqilC93rBxFdna9m7sAViEXakpdcJTZF6mKVSKtroKh5E&usqp=CAU"}></img></a>
+              <a href='#'><img src={"http://www.mixlar.com.br/blog/wp-content/uploads/2014/01/Decora%C3%A7%C3%A3o-com-materiais-reciclaveis-fotos1.jpg"}></img></a>
 
             </div>
 
             <div className='title'>
 
-                <h6>Vassoura Sem Cabo</h6>
+                <h6>Lorem ipsum dolor</h6>
 
             </div>
 
             <div className='price'>
 
-              <span>Se vira pra arrumar o cabo</span>
+              <span>Lorem ipsum dolor</span>
 
             </div>
 
@@ -212,19 +214,19 @@ const ProductCard = () => {
 
             <div className='product-thumb'>
 
-              <a href='#'><img src={"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-m5VoL7dZVdMzJcsBJ-1znbxnHOxV10gmNw&usqp=CAU"}></img></a>
+              <a href='#'><img src={"https://www.2quartos.com/y/1177/reciclado-sala-e1478526078492-600.webp"}></img></a>
 
             </div>
 
             <div className='title'>
 
-                <h6>Vestido</h6>
+                <h6>Lorem ipsum dolor</h6>
 
             </div>
 
             <div className='price'>
 
-              <span>Feito de Material Reciclado</span>
+              <span>Lorem ipsum dolor</span>
 
             </div>
 
@@ -249,19 +251,19 @@ const ProductCard = () => {
 
             <div className='product-thumb'>
 
-              <a href='#'><img src={"https://materiaincognita.com.br/wp-content/uploads/2012/09/Passaros-Sucata-Eletronica.jpg"}></img></a>
+              <a href='#'><img src={"https://catracalivre.com.br/wp-content/uploads/2019/01/tambores-de-oleo-reciclados-5-910x606.jpg"}></img></a>
 
             </div>
 
             <div className='title'>
 
-                <h6>É cada coisa!😓</h6>
+                <h6>Lorem ipsum dolor</h6>
 
             </div>
 
             <div className='price'>
 
-              <span>Feito de Material Reciclado</span>
+              <span>Lorem ipsum dolor</span>
 
             </div>
 
@@ -286,19 +288,19 @@ const ProductCard = () => {
 
             <div className='product-thumb'>
 
-              <a href='#'><img src={"https://arte.estadao.com.br/public/pages/43/1o/e2/g3/o5/8p/Calcado_Bibi_Mobile.png"}></img></a>
+              <a href='#'><img src={"https://materiaincognita.com.br/wp-content/uploads/2016/01/peixe-mobile.jpg"}></img></a>
 
             </div>
 
             <div className='title'>
 
-                <h6>Tênis Velho😜</h6>
+                <h6>Lorem ipsum dolor</h6>
 
             </div>
 
             <div className='price'>
 
-              <span>Reutilizado pra plantar</span>
+              <span>Lorem ipsum dolor</span>
 
             </div>
 

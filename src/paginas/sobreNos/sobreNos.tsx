@@ -13,6 +13,7 @@ import Rodrigo from "./img/Rodrigo.png";
 import reciclador from "./img/reciclador.jpg";
 import recicladora from "./img/recicladora.jpg";
 
+
 import Linkedin from "./img/linkedin-card.svg";
 import Github from "./img/github-card.svg";
 

@@ -9,7 +9,8 @@
   display: flex;
   background-color: #222;
   color: white !important;
-  align-items: center;
+  align-items: center !important;
+  justify-content: center !important;
   padding: 50px;
 }
 .sobreProjeto{
