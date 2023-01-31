@@ -10,10 +10,6 @@ import Lucas from "./img/Lucas.png";
 import Ivan from "./img/Ivan.png";
 import Rejane from "./img/Rejane.png";
 import Rodrigo from "./img/Rodrigo.png";
-import reciclador from "./img/reciclador.jpg";
-import recicladora from "./img/recicladora.jpg";
-
-
 import Linkedin from "./img/linkedin-card.svg";
 import Github from "./img/github-card.svg";
 
@@ -26,7 +22,7 @@ function SobreNos() {
   return (
     <>
       <Grid container className="containerSN2">
-        <Grid item sm={6}>
+        <Grid item sm={6} direction="column">
           <div className="margin-text">
             <Typography variant="h3" className="sobreProjeto">
               sobre o projeto
@@ -38,52 +34,57 @@ function SobreNos() {
               Janeiro. Fundada por um grupo de empresários preocupados com a
               situação dos catadores e com o impacto ambiental causado pelo lixo
               nas ruas da cidade, a ONG tem como principal atividade a coleta e
-              reciclagem de lixo. A ONG conta com uma equipe de profissionais
+              reciclagem de lixo. 
+            </Typography>
+              <Typography className="projetoTexto">
+              A ONG conta com uma equipe de profissionais
               altamente capacitados e dedicados, que trabalham diariamente para
               garantir que o lixo coletado seja devidamente separado e
               encaminhado para reciclagem. Além disso, a ONG oferece
               treinamentos e capacitações para os catadores, garantindo que eles
               tenham as habilidades necessárias para desempenhar seu trabalho de
-              maneira eficiente e segura. Os lucros obtidos pela ONG são
+              maneira eficiente e segura. 
+              </Typography>
+
+              <Typography className="projetoTexto">
+              Os lucros obtidos pela ONG são
               totalmente revertidos para as atividades da organização,
               garantindo assim que os catadores tenham acesso a recursos e
               equipamentos de qualidade, além de benefícios sociais e programas
               de incentivo. A ONG também trabalha em parceria com outras
               organizações e empresas para garantir que sua missão seja cumprida
               de forma eficaz e sustentável.
+              </Typography>
+              
+            <Typography className="projetoTexto">
+              A ONG Green Shop tem um papel fundamental na manutenção da limpeza
+              da cidade do Rio de Janeiro. Através da coleta e reciclagem de
+              lixo, a ONG contribui para a redução do volume de lixo nas ruas,
+              garantindo assim que a cidade seja mais limpa e agradável para se
+              viver.
             </Typography>
+            <Typography className="projetoTexto">
+               Além disso, a ONG também trabalha para conscientizar a
+              população sobre a importância da separação do lixo e da
+              reciclagem, o que contribui para a redução da quantidade de lixo
+              gerado. Dessa forma, a ONG contribui para a preservação do meio
+              ambiente e para a melhoria da qualidade de vida dos moradores da
+              cidade. 
+            </Typography>
+              <Typography className="projetoTexto">
+              Outra forma como essa iniciativa ajuda a manter a cidade
+              limpa é dando oportunidade de trabalho e renda para os catadores,
+              o que ajuda a evitar o acúmulo de lixo nas ruas, e além disso, os
+              catadores também passam a ter uma renda e uma profissão.
+              </Typography>
           </div>
         </Grid>
         <Grid item sm={6}>
           <img
-            src={recicladora}
-            alt="foto de uma recicladora sorrindo"
+            src="https://reciclaje.com.co/wp-content/uploads/2018/03/Destacada-reciclador-asociado.jpg"
+            alt="imagem1"
             className="imagem-sobreNos"
           />
-        </Grid>
-        <Grid item sm={6}>
-          <img
-            src={reciclador}
-            alt="foto de dois recicladores"
-            className="imagem-sobreNos"
-          />
-        </Grid>
-        <Grid item sm={6}>
-          <Typography className="projetoTexto">
-            A ONG Green Shop tem um papel fundamental na manutenção da limpeza
-            da cidade do Rio de Janeiro. Através da coleta e reciclagem de lixo,
-            a ONG contribui para a redução do volume de lixo nas ruas,
-            garantindo assim que a cidade seja mais limpa e agradável para se
-            viver. Além disso, a ONG também trabalha para conscientizar a
-            população sobre a importância da separação do lixo e da reciclagem,
-            o que contribui para a redução da quantidade de lixo gerado. Dessa
-            forma, a ONG contribui para a preservação do meio ambiente e para a
-            melhoria da qualidade de vida dos moradores da cidade. Outra forma
-            como essa iniciativa ajuda a manter a cidade limpa é dando
-            oportunidade de trabalho e renda para os catadores, o que ajuda a
-            evitar o acúmulo de lixo nas ruas, e além disso, os catadores também
-            passam a ter uma renda e uma profissão.
-          </Typography>
         </Grid>
       </Grid>
 

@@ -21,79 +21,6 @@ const ProductCard = () => {
 
           <Carousel breakPoints={breakPoints}>
 
-          {/* produto 1 */}
-
-          <div className='product'>
-
-            <div className='product-thumb'>
-
-              <a href='#'><img src={"https://http2.mlstatic.com/D_NQ_NP_668182-MLB28058832517_082018-O.jpg"}></img></a>
-
-            </div>
-
-            <div className='title'>
-
-                <h6>Mesa</h6>
-
-            </div>
-
-            <div className='price'>
-
-              <span>Pá comê com a familía</span>
-
-            </div>
-
-            <div className='rating'>
-
-              <div className='footer'>
-
-              <div className='btn'>
-                <a href='#' className='btn-custom primary'>ADD Carrinho</a>
-                <a href='#' className='btn-custom second'>informações</a>
-              </div>
-
-              </div>
-
-            </div>
-
-          </div>
-
-          {/* Produto 2 */}
-
-          <div className='product'>
-
-            <div className='product-thumb'>
-
-              <a href='#'><img src={"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwpRtIoph5HWovmBXK5OHPVRbOC2t30HheSg&usqp=CAU"}></img></a>
-
-            </div>
-
-            <div className='title'>
-
-                <h6>O que é isso?</h6>
-
-            </div>
-
-            <div className='price'>
-
-              <span>Também não sei, só compre!</span>
-
-            </div>
-
-            <div className='rating'>
-
-              <div className='footer'>
-
-              <div className='btn'>
-                <a href='#' className='btn-custom primary'>ADD Carrinho</a>
-                <a href='#' className='btn-custom second'>informações</a>
-              </div>
-
-              </div>
-
-            </div>
-
-          </div>
 
           {/* produto 3 */}
 
@@ -108,14 +35,14 @@ const ProductCard = () => {
             <div className='title'>
 
                 <h6>
-                Lorem ipsum dolor
+                Cadeira
                 </h6>
 
             </div>
 
             <div className='price'>
 
-              <span> Lorem ipsum dolor  </span>
+              <span> Assento de Papelão  </span>
 
             </div>
 
@@ -146,13 +73,13 @@ const ProductCard = () => {
 
             <div className='title'>
 
-                <h6>Lorem ipsum dolor</h6>
+                <h6>Decoração</h6>
 
             </div>
 
             <div className='price'>
 
-              <span>Lorem ipsum dolor</span>
+              <span>Pneus Coloridos Decorativos</span>
 
             </div>
 
@@ -220,13 +147,13 @@ const ProductCard = () => {
 
             <div className='title'>
 
-                <h6>Lorem ipsum dolor</h6>
+                <h6>Decoração</h6>
 
             </div>
 
             <div className='price'>
 
-              <span>Lorem ipsum dolor</span>
+              <span>Estante de Madeira Reciclada</span>
 
             </div>
 
@@ -257,13 +184,13 @@ const ProductCard = () => {
 
             <div className='title'>
 
-                <h6>Lorem ipsum dolor</h6>
+                <h6>Mini Bar</h6>
 
             </div>
 
             <div className='price'>
 
-              <span>Lorem ipsum dolor</span>
+              <span>Porta Bebidas Feito de Latão</span>
 
             </div>
 
@@ -294,13 +221,13 @@ const ProductCard = () => {
 
             <div className='title'>
 
-                <h6>Lorem ipsum dolor</h6>
+                <h6>Decoração</h6>
 
             </div>
 
             <div className='price'>
 
-              <span>Lorem ipsum dolor</span>
+              <span>Peixe Voador Feito de Latinhas</span>
 
             </div>
 
