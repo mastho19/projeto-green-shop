@@ -80,9 +80,9 @@ function Footer() {
 
                         <ul className='icones'>
                             <li><a href='#'><img src='https://logodownload.org/wp-content/uploads/2014/09/twitter-logo-4.png' width={60}height={50}></img></a></li>
-                            <li><a href='#'><img src='https://i0.wp.com/www.multarte.com.br/wp-content/uploads/2019/03/logo-facebook-png8.png?resize=640%2C640&ssl=1' width={90}height={90}></img></a></li>
-                            <li><a href='#'><img src='https://www.rafaelglavam.com.br/wp-content/uploads/2020/03/5491159-youtube-png-icons-and-youtube-logo-png-transparent-images-free-youtube-logopng-360_360_preview.png' width={90}height={90}></img></a></li>
-                            <li><a href='#'><img src='https://storage.builderall.com//franquias/2/6473541/editor-html/7353384.png' width={80}height={80}></img></a></li>
+                            <li><a href='#'><img src='https://i0.wp.com/www.multarte.com.br/wp-content/uploads/2019/03/logo-facebook-png8.png?resize=640%2C640&ssl=1' width={80}height={80}></img></a></li>
+                            <li><a href='#'><img src='https://www.rafaelglavam.com.br/wp-content/uploads/2020/03/5491159-youtube-png-icons-and-youtube-logo-png-transparent-images-free-youtube-logopng-360_360_preview.png' width={90}height={80}></img></a></li>
+                            <li><a href='#'><img src='https://storage.builderall.com//franquias/2/6473541/editor-html/7353384.png' width={80}height={70}></img></a></li>
                         </ul>
                        
                     </div>

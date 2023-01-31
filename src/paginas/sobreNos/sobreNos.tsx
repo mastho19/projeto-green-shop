@@ -146,7 +146,7 @@ function SobreNos() {
                       <Link rel="stylesheet" href="https://github.com/LucasMarques97" target="_blank" ><img src={Github} width='35px' alt="Logo Github" /></Link>
                     </li>
                     <li className="logo-redes">
-                      <Link rel="stylesheet" href="https://www.linkedin.com" target="_blank" ><img src={Linkedin} width='35px' alt="Logo Linkedin" /></Link>
+                      <Link rel="stylesheet" href="https://www.linkedin.com/in/lucasel/" target="_blank" ><img src={Linkedin} width='35px' alt="Logo Linkedin" /></Link>
                     </li>
                   </ul>
                   </div>

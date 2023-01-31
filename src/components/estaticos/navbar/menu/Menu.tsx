@@ -3,6 +3,7 @@ import './Menu.css'
 import Input from '@mui/material/Input'
 import InputAdornment from '@mui/material/InputAdornment'
 import SearchIcon from '@mui/icons-material/Search'
+import { Link } from 'react-router-dom'
 
 function MenuBarrinha() {
     return (
@@ -25,12 +26,9 @@ function MenuBarrinha() {
                         </FormControl>
                     </li>
 
-                    <li><b>PRODUTOS</b></li>
-                    <li><b>CATEGORIAS</b></li>
-                    <li><b>PROMOÇÕES</b></li>
-                    <li><b>MÓVEIS</b></li>
-                    <li><b>DECORAÇÃO</b></li>
-                    <li><b>BLOG</b></li>
+                    <li><b><Link to='/home'>HOME</Link></b></li>
+                    <li><b><Link to='/produtos/all'>PRODUTOS</Link></b></li>
+                    <li><b><Link to='/sobre-nos'>SOBRE NÓS</Link></b></li>
 
                 </ul>
 

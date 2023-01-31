@@ -16,10 +16,104 @@
 
 .text-logo {
     font-size: 40px !important;
-    margin-left: 500px !important;
+    margin-left: 80px !important;
+    transform: translate(0px);
+    animation: float 5s ease-in-out infinite;
 }
-.barrinha {
+.barrinha{
+    width: 152px;
+    height: 3px;
+    background-color: #00A470;
     margin-top: -5px;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+.LogoEffect {
+    position: relative;
+    display: inline-block;
+    padding: 5px 10px;
+    color: black;
+    text-decoration: none;
+    margin-top: 10px;
+    overflow: hidden;
+    transition: 0.2s;
+}
+
+.LogoEffect:hover {
+    
+    border-radius: 10px;
+    transition-delay: 1s;
+}
+
+.LogoEffect span {
+    position: absolute;
+    display: block;
+}
+
+.LogoEffect span:nth-child(1) {
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #00A470);
+}
+
+.LogoEffect:hover span:nth-child(1) {
+    left: 100%;
+    transition: 1s;
+}
+
+.LogoEffect span:nth-child(3) {
+    bottom: 0;
+    right: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(270deg, transparent, #00A470);
+}
+
+.LogoEffect:hover span:nth-child(3) {
+    right: 100%;
+    transition: 1s;
+    transition-delay: 0.5s;
+}
+
+.LogoEffect span:nth-child(2) {
+    top: -100%;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg, transparent, #00A470);
+}
+
+.LogoEffect:hover span:nth-child(2) {
+    top: 100%;
+    transition: 1s;
+    transition-delay: 0.25s;
+}
+
+.LogoEffect span:nth-child(4) {
+    bottom: -100%;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(360deg, transparent, #00A470);
+}
+
+.LogoEffect:hover span:nth-child(4) {
+    bottom: 100%;
+    transition: 1s;
+    transition-delay: 0.75s;
 }
 
 /* logo GreenShop fim*/
@@ -73,7 +167,7 @@
     height: 35px !important;
     border-radius: 3px;
     cursor: pointer;
-    margin-left: 0px;
+    margin-left: 10px;
 }
 
 .sacola img {
@@ -154,173 +248,35 @@
 
 /* ////////////////////////////////////////////////////////////// */
 
-.LogoEffect {
-    position: relative;
-    display: inline-block;
-    padding: 5px 10px;
-    color: black;
-    text-decoration: none;
-    margin-top: 10px;
-    overflow: hidden;
-    transition: 0.2s;
-}
 
-.LogoEffect:hover {
-    color: white;
-    background: #00a470;
-    border-radius: 10px;
-    box-shadow: 0 0 10px #00A470, 0 0 40px #00A470, 0 0 80px #00A470;
-    transition-delay: 1s;
-}
-
-.LogoEffect span {
-    position: absolute;
-    display: block;
-}
-
-.LogoEffect span:nth-child(1) {
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 2px;
-    background: linear-gradient(90deg, transparent, #00A470);
-}
-
-.LogoEffect:hover span:nth-child(1) {
-    left: 100%;
-    transition: 1s;
-}
-
-.LogoEffect span:nth-child(3) {
-    bottom: 0;
-    right: -100%;
-    width: 100%;
-    height: 2px;
-    background: linear-gradient(270deg, transparent, #00A470);
-}
-
-.LogoEffect:hover span:nth-child(3) {
-    right: 100%;
-    transition: 1s;
-    transition-delay: 0.5s;
-}
-
-.LogoEffect span:nth-child(2) {
-    top: -100%;
-    right: 0;
-    width: 2px;
-    height: 100%;
-    background: linear-gradient(180deg, transparent, #00A470);
-}
-
-.LogoEffect:hover span:nth-child(2) {
-    top: 100%;
-    transition: 1s;
-    transition-delay: 0.25s;
-}
-
-.LogoEffect span:nth-child(4) {
-    bottom: -100%;
-    left: 0;
-    width: 2px;
-    height: 100%;
-    background: linear-gradient(360deg, transparent, #00A470);
-}
-
-.LogoEffect:hover span:nth-child(4) {
-    bottom: 100%;
-    transition: 1s;
-    transition-delay: 0.75s;
-}
 
 /* //////////////////////////////////////////////////////////////////// */
-.barrinha {
-    position: relative;
-    color: #00A470;
-}
 
 .Shop {
     position: relative;
-    color: rgba(17, 17, 17, 0.651);
-}
-
-.barrinha {
-    content: attr(data-text);
-    position: absolute;
-    color: green;
-    width: 100px;
-    white-space: nowrap;
-    overflow: hidden;
-    animation: animarBarrinha 5s linear infinite;
-}
-
-.Shop::before {
-    content: attr(data-text);
-    position: absolute;
-    color: green;
-    width: 100px;
-    white-space: nowrap;
-    overflow: hidden;
-    animation: animarElemento 5s linear infinite;
-}
-
-.Shop:hover::before {
-    color: #e3e3e3;
+    color: rgba(51, 51, 51, 0.845);
 }
 
 .btn-link {
     color: inherit;
 }
-@keyframes animarElemento {
-
-    0%,
-    10%,
-    100% {
-        width: 0;
-    }
-
-    70%,
-    90% {
-        width: 55%;
-    }
-}
-
-@keyframes animarBarrinha {
-
-    0%,
-    10%,
-    100% {
-        width: 0;
-    }
-
-    70%,
-    90% {
-        width: 70%;
-    }
-}
 
 /* ////////////////////////////////////////////////////////////////// */
 @media (max-width: 1600px){
-    .text-logo {
-        margin-left: 40px !important;
-    }
+  
     .pesquisa {
         margin-left: 600px;
     }
 }
 
 @media (max-width: 1400px){
-    .text-logo {
-        margin-left: 40px !important;
-    }
+   
     .pesquisa {
         margin-left: 300px;
     }
 }
 @media (max-width: 1000px){
-    .text-logo {
-        margin-left: 40px !important;
-    }
+ 
     .pesquisa {
         margin-left: 100px;
     }
@@ -340,17 +296,12 @@
     .MenuBarrinha {
         visibility: visible;
     }
-
-    /*  */
     .bar2 {
         display: none !important;
     }
-
-    /*  */
     .perfil {
-        width: -10px !important;
-        height: 30px;
-        /* obs: para evitar quebra de linha do texto */
+        margin-left: 5px;
+        height: 34px;   
     }
     .conta{
         display: none;
@@ -362,58 +313,36 @@
         margin-top: -23px;
         margin-left: 0px;
     }
-    /*  */
-  
-
-    /* pesquisa inicio */
     .pesquisa {
         display: none;
         visibility: hidden;
     }
+}
 
-    /* pesquisa fim */
+@media (max-width: 600px) {
+    
+    .text-logo {
+        font-size: 30px !important;
+        margin-left: 50px !important;
+    }
 
-    /* perfil inicio */
+    .perfil{
+        margin-left: -20px !important;
+    }
 
-    /* perfil fim */
-
+    .barrinha {
+        width: 115px;
+    }
 }
 
 @media (max-width: 400px) {
-
-    /*  */
-    .LogoEffect{
-        font-size: 20px !important;
-        margin-left: -22px !important;
+    
+    .text-logo {
+        font-size: 25px !important;
+        margin-left: 13px !important;
     }
-    /*  */
-    .pesquisa {
-        display: none;
-        visibility: hidden;
-    }
-
-    /*  */
-    .conta2{
-        width: 25px !important;
-        height: 5px !important;
-        margin-top: -23px;
-        margin-left: 0px;
-    }
-    /*  */
-    .sacola {
-        margin-left: -10px;
-        margin-top: 8px;
-        padding-top: 0px;
-    }
-
-    .sacola img {
-        width: 23px;
-        height: 23px;
-    }
-
-    .qtd {
-        margin-left: -10px;
-        height: 15px;
-        margin-top: -15px;
+ 
+    .barrinha {
+        width: 97px;
     }
 }

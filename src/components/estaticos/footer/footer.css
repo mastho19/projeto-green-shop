@@ -20,8 +20,7 @@
     justify-content: center;
     align-items: center;
     text-align: center;
-    margin-bottom: 24px;
-    padding: 24px;
+    padding: 10px;
     color: #fff;
     font-size: 25px;
 
@@ -43,7 +42,6 @@
     outline: none;
     border: none;
     font-size: 18px;
-    margin-bottom: 16px;
     border: 1px solid #fff;
 }
 
@@ -54,7 +52,6 @@
     outline: none;
     border: none;
     font-size: 18px;
-    margin-bottom: 16px;
     border: 1px solid #fff;
     background-color: rgba(128, 128, 128, 0.918);
     color: #fff;
@@ -139,49 +136,67 @@
 
 .pagamento {
     display: flex;
-    width: 3.75rem;
-    height: 1.875rem;
-    margin-bottom: .5rem;
-    margin-right: .5rem;
-    padding: .25rem;
+    width: 60px;
+    height: 30px;
+    margin-bottom: .2rem;
+    padding: 5px;
     background-color: rgb(255, 255, 255);
     box-shadow: 0 1px 1px rgb(0 0 0 / 20%);
     box-sizing: border-box;
     overflow: hidden;
-    border-radius: .125rem;
+    border-radius: 3px;
 }
 
 .pagamento:hover {
     box-shadow: yellow 0px 0px 9px 3px;
 }
 
-.social-media {
-    max-width: 1000px;
-    width: 100%;
-}
-
-.social-media-wrap {
+.icones{
+    position: relative;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 90%;
-    max-width: 1000px;
-    margin: 40px auto 0 auto;
+    z-index: 2;
 }
-
-.social-icons {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 240px;
+.icones li{
+    position: relative;
+    list-style: none;
+    margin: 10px;
 }
-
-.social-icons:hover {
+.icones li a{
+    position: relative;
+    width: 70px;
+    height: 70px;
+    display: inline-block;
+    border-radius: 10px;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    width: 240px;
-    color: blueviolet;
+    text-decoration: none;
+    color: #fff;
+    font-size: 2em;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 5px 45px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(2px);
+    transition: 0.5s;
+    overflow: hidden;
+}
+.icones li a:hover{
+    transform: translateY(-20px);
+}
+.icones li a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50px;
+    height: 100px;
+    background: rgba(255, 255, 255, 0.5);
+    transform: skewX(45deg) translateX(150px);
+    transition: 0.5s;
+}
+.icones li a:hover::before{
+    transform: skewX(45deg) translateX(-150px);
 }
 
 .end {
@@ -191,7 +206,7 @@
     justify-content: center;
     align-items: center;
     color: #fff;
-    margin: 20px auto 30px auto;
+    margin: -30px auto 20px auto;
 }
 
 /* ////////////////////////// */
@@ -254,53 +269,7 @@
 
 /*  */
 
-.icones{
-    position: relative;
-    display: flex;
-    z-index: 2;
-}
-.icones li{
-    position: relative;
-    list-style: none;
-    margin: 10px;
-}
-.icones li a{
-    position: relative;
-    width: 80px;
-    height: 80px;
-    display: inline-block;
-    border-radius: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-decoration: none;
-    color: #fff;
-    font-size: 2em;
-    border: 1px solid rgba(255, 255, 255, 0.4);
-    border-right: 1px solid rgba(255, 255, 255, 0.2);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-    box-shadow: 0 5px 45px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(2px);
-    transition: 0.5s;
-    overflow: hidden;
-}
-.icones li a:hover{
-    transform: translateY(-20px);
-}
-.icones li a::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 50px;
-    height: 100px;
-    background: rgba(255, 255, 255, 0.5);
-    transform: skewX(45deg) translateX(150px);
-    transition: 0.5s;
-}
-.icones li a:hover::before{
-    transform: skewX(45deg) translateX(-150px);
-}
+
 
 /*  */
 
