@@ -55,7 +55,7 @@
     z-index: 98;
 }
 .cardDescricao{
-    font-size: 12px !important;
+    font-size: 14px !important;
     color: #555;
     min-height: 50px;
 }
@@ -67,6 +67,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    
 }
 .btnCarrinho{
     background-color: #ecec41 !important;
