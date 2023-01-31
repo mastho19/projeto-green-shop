@@ -22,8 +22,6 @@ const ProductCard = () => {
           <Carousel breakPoints={breakPoints}>
 
 
-          {/* produto 3 */}
-
           <div className='product'>
 
             <div className='product-thumb'>
@@ -61,13 +59,11 @@ const ProductCard = () => {
 
           </div>
 
-          {/* produto 4 */}
-
           <div className='product'>
 
             <div className='product-thumb'>
 
-              <a href='#'><img src={"http://www.mixlar.com.br/blog/wp-content/uploads/2014/01/Decora%C3%A7%C3%A3o-com-materiais-reciclaveis-fotos1.jpg"}></img></a>
+              <a href='#'><img src={"https://i.pinimg.com/564x/b9/27/b6/b927b64331e045d705452e49c126522a.jpg"}></img></a>
 
             </div>
 
@@ -97,8 +93,6 @@ const ProductCard = () => {
             </div>
 
           </div>
-
-          {/* produto 5 */}
 
           <div className='product'>
 
@@ -135,8 +129,6 @@ const ProductCard = () => {
 
           </div>
 
-          {/* produto 6 */}
-
           <div className='product'>
 
             <div className='product-thumb'>
@@ -172,8 +164,6 @@ const ProductCard = () => {
 
           </div>
 
-          {/* produto 7 */}
-
           <div className='product'>
 
             <div className='product-thumb'>
@@ -208,8 +198,6 @@ const ProductCard = () => {
             </div>
 
           </div>
-
-          {/* produto 7 */}
 
           <div className='product'>
 
