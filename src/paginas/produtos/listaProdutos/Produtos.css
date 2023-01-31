@@ -9,6 +9,8 @@
     min-height: 100vh;
     padding: 0px !important;
     padding-bottom: 20px !important;
+    margin-top: 150px;
+    margin-bottom: -100px;
 }
 .btnAdicionarProduto{
     background-color: #00a470 !important;

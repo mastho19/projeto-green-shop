@@ -52,6 +52,7 @@
 .perfil {
     background-color: #00A470 !important;
     white-space: nowrap;
+    margin-right: 10px !important;
     /* obs: para evitar quebra de linha do texto */
 }
 .conta2{
