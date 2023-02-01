@@ -39,8 +39,7 @@ function Navbar() {
     <>
       <AppBar position="fixed" className="appbar">
         <Toolbar variant="dense" className="bar">
-        
-          
+         
         <div className="MenuBarrinha"><MenuBarrinha /></div>
 
           <Box className="logo">

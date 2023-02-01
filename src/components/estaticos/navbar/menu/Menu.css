@@ -7,10 +7,6 @@
     /* para deixar a checkbox invisivel e aparecer a barrinha com os três botões */
 }
 
-.menu .menu-faketrigger:checked~ul {
-    /* background-color: transparent; */
-}
-
 .menu .menu-faketrigger:checked~.menu-lines span {
     background-color: yellow;
 }
@@ -57,8 +53,8 @@ input {
     position: absolute;
     z-index: 998;
     left: 0;
-    height: calc(100vh - 100px);
-    width: 100%;
+    height: calc(1000vh - 1000px);
+    width: 25%;
     padding-top: 100px;
     background-color: #00a470;
     margin-left: -115%;
@@ -99,13 +95,28 @@ input {
 b {
     padding: 10px;
     display: flex;
-    margin-left: -50px;
+    margin-left: center;
 }
 b:hover {
     color: yellow !important;
 }
 
 /*  */
+@media (max-width: 600px) {
+
+    .menu ul{
+        margin-top: 35px;
+    }
+
+}
+
+@media (max-width: 518px) {
+
+    .menu ul li a {
+        font-size: 15px;
+        margin: center;
+    }
+}
 
 @media (max-width: 400px) {
     .menu .menu-faketrigger {
@@ -113,10 +124,14 @@ b:hover {
         z-index: 1000;
         width: 30px;
         height: 30px;
-        top: 45px;
+        top: 25px;
         left: 10px;
         opacity: 0;
         /* para deixar a checkbox invisivel e aparecer a barrinha com os três botões */
+    }
+
+    .menu ul{
+        margin-top: 30px;
     }
 
     .menu .menu-lines {
@@ -148,14 +163,12 @@ b:hover {
         transform: rotate(-54deg) scaleX(1.35);
     }
 
-    .menu ul {
-        margin-top: 30px;
+    @media (max-width: 350px) {
+        .menu ul li a {
+            font-size: 10px;
+            margin: center;
+        }
     }
-
-    li, b {
-        margin-left: -35px !important;
-    }
-
     /*  */
 
 
